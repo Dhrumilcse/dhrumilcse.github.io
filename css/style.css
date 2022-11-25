@@ -1,0 +1,36 @@
+/* Graphik Web Regular */
+@import url('https://fonts.cdnfonts.com/css/graphik');
+
+
+body {
+  margin-top: 5%;
+  margin-left: 3%;
+  font-family: "Graphik", 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+.heading {
+  font-family: 'Graphik', 'Times New Roman', Times, serif;
+  font-size: larger;
+}
+
+.description {
+  font-family: 'Graphik', 'Times New Roman', Times, serif;
+  text-emphasis-color: gray;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #696969 !important;
+  text-decoration: underline !important;
+}
