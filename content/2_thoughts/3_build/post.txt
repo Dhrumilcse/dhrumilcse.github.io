@@ -1,0 +1,20 @@
+Title: Build
+
+----
+
+Text:
+
+I’ve reached out to numerous founders (really early stage) on numerous occasions whether just to chat or to see if they're hiring. Regardless of the reason, I either did not get a response or get one saying they are not looking for a *data* focused role at the moment. What can I, as a data person, do to just have a seat at the table?
+
+> Given all the tools, materials, and resources, would you be a able to build an actual *physical* chair? 
+
+Few things I realized after a while - for starters, don’t restrict yourself to data. Second, build. Builders (software in particular) appreciate and respect other builders. This doesn't guarantee anything, but maybe you learn something new that can help you get a seat at the table.  
+
+I’ve been following the indie hacker community for a while now and see people build 10s, 100s of apps before actually *making it*. By no means it is easy, look at the number of companies made it to $1B+ in market cap who started as a bootstrap application. Would they've found out if they did not start? Probably not. Start building.
+
+----
+
+Date: 16-09-2023
+
+----
+Uuid: TDDA3tk4bgiodKXo

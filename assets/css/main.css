@@ -1,0 +1,282 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block
+}
+
+@font-face {
+    font-family: 'Graphik Web Regular';
+    src: url('../fonts/Graphik-Regular.otf') format('opentype');
+}
+
+
+:root {
+    --background: #fff;
+    --text: #111111;
+    --text-mid: #333333;
+    --text-low: #555555;
+    --line: #999999;
+    --f-size: 1rem;
+    --scale-s: 0.8;
+    --scale-m: 0.96;
+    --scale-l: 1.2;
+    --scale-xl: 1.4;
+    --max-width: 560px;
+    --line-height: 1.75;
+}
+
+@media (min-width: 250px) {
+    :root {
+        --f-size: 1.025rem;
+        --max-width: 510px;
+    }
+}
+
+@media (min-width: 500px) {
+    :root {
+        --f-size: 1.05rem;
+        --max-width: 510px;
+    }
+}
+
+@media (min-width: 1000px) {
+    :root {
+        --f-size: 1.075rem;
+        --max-width: 545px;
+    }
+}
+
+@media (min-width: 1500px) {
+    :root {
+        --f-size: 1.115rem; 
+        --max-width: 565px;
+    }
+}
+
+@media (min-width: 2000px) {
+    :root {
+        --f-size: 1.25rem;
+        --max-width: 635px;
+    }
+}
+
+@media (min-width: 2250px) {
+    :root {
+        --f-size: 1.35rem;
+        --max-width: 685px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #111;
+        --text: #C7C8CA;
+        --text-mid: #a4a6a8;
+        --text-low: #737476;
+        --line: #656565;
+    }
+}
+
+::selection {
+    background: var(--text);
+    color: var(--background);
+}
+
+body {
+    line-height: 1.75;
+    display: flex;
+    justify-content: center;
+    font-family: "Graphik Web Regular", "Iowan Old Style", "Iowan", "Charter", "Palatino Linotype", "Palatino", "Book Antiqua", "Palatino LT STD", Times New Roman, serif;
+    font-size: var(--f-size);
+    color: var(--text);
+    background: var(--background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    font-kerning: normal;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    position: relative;
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 5vw;
+}
+
+
+
+
+/* LINKS  */
+
+a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+}
+
+a:hover {
+    border-bottom: 1px solid var(--text);
+}
+
+.a-undecorated {
+    color: var(--text-low);
+    text-decoration: none !important;
+    border-bottom: none;
+}
+
+.a-undecorated:hover {
+    color: var(--text);
+    border-bottom: none;
+}
+
+.a-disabled {
+    pointer-events: none;
+}
+
+
+
+
+
+/* SECTION */
+
+.section {
+    padding-top: 10%;
+    padding-bottom: 1.5%;
+    font-size: calc(var(--f-size) * var(--scale-s));
+    color: var(--text-low);
+}
+
+.section-right {
+    padding-top: 10%;
+    padding-bottom: 1.5%;
+    font-size: calc(var(--f-size) * var(--scale-s));
+    color: var(--text-low);
+    text-align: right;
+}
+
+
+
+/* UNIQUE */
+
+.home-icon-circle {
+    /* Or #FF2E00 - more dark */
+    background-color: #FF4F00;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.svg {
+    width: 0.75rem; /* 3/4 of the default font size (1rem) */
+    height: 0.75rem; /* 3/4 of the default font size (1rem) */
+    display: inline;
+    margin-top: 2rem;
+}
+
+
+
+
+/* ALL THOUGHTS */
+
+
+.thought {
+    display: flex;
+    color: var(--text);
+}
+
+.thought:hover .post-spacer {
+    border-bottom: 1px solid var(--text);
+}
+
+.post-spacer {
+    margin-right: .5rem;
+    margin-left: .5rem;
+    height: 1px;
+    border: none;
+    border-bottom: 1px dotted var(--text-mid);
+    flex: 1 0 1rem;
+    opacity: 0.25;
+    align-self: flex-end;
+    margin-bottom: 0.55rem;
+}
+
+
+
+
+/* INDIVIDUAL THOUGHTS */
+h1,
+h2, 
+h3 {
+    font-weight: normal;
+}
+
+.th-heading {
+    font-size: calc(var(--f-size) * var(--scale-xl));
+    padding-top: 15%;
+    color: var(--text);
+}
+
+.th-content {
+    font-size: calc(var(--f-size) * var(--scale-m));
+    padding-top: 10%;
+    color: var(--text-mid);
+}
+
+
+.wrap-thought p + p {
+    padding-top: 15px;
+    text-indent: 1.5em;
+}
+
+
+/* FOOTER */
+
+.thoughts-footer {
+    display: flex;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    color: var(--text-low);
+}
+
+.p-footer {
+    font-size: calc(var(--f-size) * var(--scale-s));
+    color: var(--text-low);
+}
+
+.p-footer:hover {
+    color: var(--text);
+}
+
+
+
+/* BLOCK QUOTES */
+
+
+blockquote + p {
+    text-indent: 1.5em;
+}
+
+blockquote {
+    margin-left: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-left: 1.5px solid var(--text-mid);
+}
+
+blockquote p {
+    font-size: calc(var(--f-size) * var(--scale-m));
+    margin-left: 1rem;
+}
