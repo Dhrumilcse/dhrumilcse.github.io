@@ -2,9 +2,10 @@ Title: 404
 
 ----
 
-Text: Not all those who wander are lost. 
+Text:
 
-Go straight back to [home](/home) or take a look at what I am reading and learning these days.
+This page is no longer available. 
+Go back to the [homepage](/home) or find out [what I learned today](/today).
 
 ----
 

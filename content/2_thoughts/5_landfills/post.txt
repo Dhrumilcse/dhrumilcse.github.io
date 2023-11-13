@@ -1,0 +1,29 @@
+Title: Landfills
+
+----
+
+Date: 2023-09-19
+
+----
+
+Text:
+
+What would be your first thought when you hear the word *landfills*? Stinky? Garbage dump? Unorganized? What else? If you, just like me, thought that a landfill is where the garbage trucks go and dump it on existing piles of garbage, I am happy to say we both are wrong, at least in one part of the world.
+
+On a recent visit to Pittsburgh, I got to visit one of West Pennsylvania's largest landfills and it was nothing close to what I imagined it to be. It was quite the opposite. It looked like a park more than anything else. Here are some facts that I learned that day:
+
+- Processes 1800 tons of waste/day
+- They have ongoing renewable energy projects
+- Total 700 acres of land, 190 active disposal 
+- They make 3 layers before laying footprint (garbage) to protect land, here is the typical [anatomy of a landfill](https://www.wm.com/thinkgreen/pdfs/Anatomy_of_a_Landfill.pdf)
+- The waste produces [methane](https://www.britannica.com/science/methane), a powerful greenhouse gas, the landfill captures 99.9% of it and has detectors on the perimeter to make sure it doesn't escape the landfill's peripheral 
+- The majority of their fleet runs on CNG (produced from the methane from landfills)
+- Put cover at the end of the day to avoid smell and trash flowing away, mainly by soil
+- Once at capacity, they wait for 30 years and then use the land for golf courses, parks, and other recreational activities. It can't be used to build housing.
+- It did not stink. At all.
+
+I was surprised to see the landfills operating with such process and order. There is still a lot that I missed while the team handling the landfill shared these details with us. Regardless, it's important to think about the waste that we produce daily and to understand how it's being processed.
+
+----
+
+Uuid: V2BDucu2YJYd2TuT

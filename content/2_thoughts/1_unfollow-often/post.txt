@@ -2,12 +2,20 @@ Title: Unfollow Often
 
 ----
 
-Text: You should unfollow often.
+Date: 2023-08-20
+
+----
+
+Text:
+
+Feed or timeline, you take the word of your choice. It is everywhere and shapes how we consume content every day. You open up a news app with a personalized feed for you. You open Facebook, your timeline. Instagram, curated explore tab. YouTube, videos based on your history. Amazon, personal shopping recommendations. Twitter, check.
+
+From a technology perspective, it’s a great thing. You know within a matter of seconds when something happens on the other side of the world. On the flip side, you feel the constant urge to check those feeds and notifications, even when there’s nothing new happening. How does that happen?
+
+We follow 100s of sources and more than 500 people on Instagram and Twitter. From celebrities to athletes, from our favourite brands to DIY channels. But here is a fact: consuming content generated daily by our favourite creators or influencers is impossible. Maybe it is possible, but it sure as hell is not healthy. Still, we try very hard to do so. This urge of wanting to be up to date locks us in a habit that eventually leads to doom scrolling.
+
+What I do, and what works for me, is constantly curating timelines. Instead of adding new content to your timeline, _replace_ it with the ones that are not adding value to your day-to-day life. _Unfollow often_. Or even better, substitute feeds as much as you can. For example, instead of following business news, I read the [Morning Brew](https://www.morningbrew.com/daily) newsletter. It takes 10 minutes, gives me all the information I need, and it’s fun to read. Following only close friends (ideally, no more than 150) on Instagram helps. Using Twitter to get [insights](https://twitter.com/BankMercury/status/1443658346394013701) into how founders build great companies keeps me motivated.
 
 ----
 
 Uuid: Tquf3OER2esuTQlp
-
-----
-
-Date: 20-08-2023
