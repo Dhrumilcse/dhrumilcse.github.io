@@ -5,3 +5,4 @@ const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-s
 const ogImage = prefersDarkMode ? "../image/og-dark.png" : "../image/og-light.png";
 
 document.querySelector('meta[property="og:image"]').setAttribute('content', ogImage);
+document.querySelector('meta[property="twitter:image"]').setAttribute('content', ogImage);
