@@ -1,7 +1,11 @@
 <?php
 
 return [
-    'debug'  => true,
+    'url' => 'https://dhrumil.ca',
+    'panel' => [
+      'install' => true,
+      'slug' => 'panel'
+    ],
     'd4l' => [
       'static_site_generator' => [
         'endpoint' => 'generate-static-site', # set to any string like 'generate-static-site' to use the built-in endpoint (necessary when using the blueprint field)
