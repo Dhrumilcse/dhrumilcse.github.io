@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="<?= url('assets/image/faveicon.ico') ?>">
+    <link rel="shortcut icon" href="<?= url('assets/image/favicon.ico') ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= css('assets/css/main.css') ?>
 
