@@ -16,7 +16,9 @@
     <meta property="og:url" content="https://dhrumil.ca/" />
     <meta property="og:title" content="Dhrumil Patel" />
     <meta property="og:description" content="Data, Dogs, and Minimalism." />
-    <meta property="og:image" content="<?= url('assets/image/og-light.png') ?>" />
+    <?php $ogImage = $page->isHomePage() ? 'og-light.png' : $page->title() . '.png';    ?>
+    <meta property="og:image" content="<?= url('assets/image/' . $ogImage) ?>" />
+
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
