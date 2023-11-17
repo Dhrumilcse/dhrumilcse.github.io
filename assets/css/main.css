@@ -30,8 +30,8 @@ section {
     --max-width: 560px;
     --line-height: 1.75;
     --photo-height: 100vh;
-    --photo-max-width: 5%;
-    --photo-max-height: 5%;
+    --photo-max-height: 15%;
+    --photo-max-width: 15%;
 }
 
 @media (min-width: 250px) {
@@ -45,8 +45,6 @@ section {
     :root {
         --f-size: 1.05rem;
         --max-width: 510px;
-        --photo-max-width: 7.5%;
-        --photo-max-height: 7.5%;
     }
 }
 
@@ -54,8 +52,6 @@ section {
     :root {
         --f-size: 1.075rem;
         --max-width: 545px;
-        --photo-max-width: 15%;
-        --photo-max-height: 15%;
     }
 }
 
@@ -314,7 +310,7 @@ figure {
 
 img {
     max-width: calc(100% - var(--photo-max-width)); 
-    max-height: calc(100% - var(--photo-max-height)); 
+    max-height: calc(100% - var(--photo-max-height));
     object-fit: contain;
 }
 
