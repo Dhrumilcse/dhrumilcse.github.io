@@ -303,7 +303,6 @@ figure {
 img {
     max-width: calc(100% - 15%) !important; 
     max-height: calc(100% - 15%) !important;
-    object-fit: contain;
 }
 
 figcaption {
