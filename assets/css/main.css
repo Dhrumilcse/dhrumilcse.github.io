@@ -38,8 +38,6 @@ section {
     :root {
         --f-size: 1.025rem;
         --max-width: 510px;
-        --photo-max-width: 5%;
-        --photo-max-height: 5%;
     }
 }
 
