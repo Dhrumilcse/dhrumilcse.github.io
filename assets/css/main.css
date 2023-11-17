@@ -30,15 +30,12 @@ section {
     --max-width: 560px;
     --line-height: 1.75;
     --photo-height: 100vh;
-    --photo-max-width: 15%;
-    --photo-max-height: 15%;
 }
 
 @media (min-width: 250px) {
     :root {
         --f-size: 1.025rem;
         --max-width: 510px;
-        --photo-height: 100vh;
         --photo-max-width: 5%;
         --photo-max-height: 5%;
     }
@@ -48,7 +45,6 @@ section {
     :root {
         --f-size: 1.05rem;
         --max-width: 510px;
-        --photo-height: 100vh;
         --photo-max-width: 7.5%;
         --photo-max-height: 7.5%;
     }
@@ -58,7 +54,6 @@ section {
     :root {
         --f-size: 1.075rem;
         --max-width: 545px;
-        --photo-height: 100vh;
         --photo-max-width: 15%;
         --photo-max-height: 15%;
     }
@@ -68,6 +63,8 @@ section {
     :root {
         --f-size: 1.115rem; 
         --max-width: 565px;
+        --photo-max-width: 15%;
+        --photo-max-height: 15%;
     }
 }
 
@@ -75,6 +72,8 @@ section {
     :root {
         --f-size: 1.25rem;
         --max-width: 635px;
+        --photo-max-width: 15%;
+        --photo-max-height: 15%;
     }
 }
 
@@ -82,6 +81,8 @@ section {
     :root {
         --f-size: 1.35rem;
         --max-width: 685px;
+        --photo-max-width: 15%;
+        --photo-max-height: 15%;
     }
 }
 
@@ -312,8 +313,8 @@ figure {
 }
 
 img {
-    max-width: calc(100% - var(--photo-max-width)); /* 100% width with a 10px margin on each side */
-    max-height: calc(100% - var(--photo-max-height)); /* 100% height with a 10px margin on top and bottom */
+    max-width: calc(100% - var(--photo-max-width)); 
+    max-height: calc(100% - var(--photo-max-height)); 
     object-fit: contain;
 }
 
