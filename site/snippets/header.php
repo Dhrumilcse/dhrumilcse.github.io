@@ -25,7 +25,7 @@
     <meta property="twitter:url" content="https://dhrumil.ca/" />
     <meta property="twitter:title" content="Dhrumil Patel" />
     <meta property="twitter:description" content="Data, Dogs, and Minimalism." />
-    <meta property="twitter:image" content="<?= url('assets/image/og-light.png') ?>" />
+    <meta property="twitter:image" content="<?= url('assets/image/' . $ogImage) ?>" />
 
     <title>Home</title>
 </head>
