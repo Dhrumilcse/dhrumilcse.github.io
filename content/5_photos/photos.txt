@@ -2,6 +2,10 @@ Title: Photos
 
 ----
 
+Description: The world through my (mini) lens
+
+----
+
 Text:
 
 (image: img_3178.jpeg caption: Sunshine and Sunflowers, Aug 2023 class:img-wrap)

@@ -7,9 +7,9 @@
 
     <!-- Meta -->
     <!-- Primary Meta Tags -->
-    <title>Dhrumil Patel</title>
-    <meta name="title" content="Dhrumil Patel" />
-    <meta name="description" content="Data, Dogs, and Minimalism" />
+    <title><?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title() . ' &mdash; Dhrumil'; ?></title>
+    <meta name="title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title() . ' &mdash; Dhrumil'; ?>" />
+    <meta name="description" content="<?= $page->description() ?>" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

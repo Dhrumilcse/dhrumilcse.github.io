@@ -1,4 +1,8 @@
-Title: Today
+Title: Today Project
+
+----
+
+Description: The goal is to keep the curiosity alive
 
 ----
 

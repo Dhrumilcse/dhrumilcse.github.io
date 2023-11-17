@@ -2,6 +2,10 @@ Title: Home
 
 ----
 
+Description: Data, Dogs, and Minimalism
+
+----
+
 Text:
 
 I'm Dhrumil Patel, a product-minded engineer creating scalable and reliable data solutions. I also love minimalist design, dogs, and the outdoors. Currently working as a Senior Data Engineer at [Flashfood](https://flashfood.com) in Toronto. I also work on making [pet adoption](http://adoptpet.ca) more accessible.
