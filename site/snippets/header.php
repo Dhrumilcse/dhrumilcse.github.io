@@ -7,6 +7,12 @@
     <?= css('assets/css/main.css') ?>
 
     <!-- Meta -->
+    <?php
+    $customImage = $page->title() . '.png';
+    $defaultImage = 'og-light.png';
+    $ogImage = $page->isHomePage() ? $defaultImage : (file_exists('assets/image/' . $customImage) ? $customImage : $defaultImage);
+    ?>
+
     <!-- Primary Meta Tags -->
     <title><?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title() . ' &mdash; Dhrumil'; ?></title>
     <meta name="title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title(); ?>" />
@@ -17,9 +23,7 @@
     <meta property="og:url" content="https://dhrumil.ca/" />
     <meta property="og:title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title(); ?>" />
     <meta property="og:description" content="<?= $page->description() ?>" />
-    <?php $ogImage = $page->isHomePage() ? 'og-light.png' : $page->title() . '.png';    ?>
     <meta property="og:image" content="<?= url('assets/image/' . $ogImage) ?>" />
-
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
