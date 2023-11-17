@@ -1,8 +1,6 @@
 article,
 aside,
 details,
-figcaption,
-figure,
 footer,
 header,
 hgroup,
@@ -31,12 +29,18 @@ section {
     --scale-xl: 1.4;
     --max-width: 560px;
     --line-height: 1.75;
+    --photo-height: 100vh;
+    --photo-max-width: 15%;
+    --photo-max-height: 15%;
 }
 
 @media (min-width: 250px) {
     :root {
         --f-size: 1.025rem;
         --max-width: 510px;
+        --photo-height: 100vh;
+        --photo-max-width: 5%;
+        --photo-max-height: 5%;
     }
 }
 
@@ -44,6 +48,9 @@ section {
     :root {
         --f-size: 1.05rem;
         --max-width: 510px;
+        --photo-height: 100vh;
+        --photo-max-width: 7.5%;
+        --photo-max-height: 7.5%;
     }
 }
 
@@ -51,6 +58,9 @@ section {
     :root {
         --f-size: 1.075rem;
         --max-width: 545px;
+        --photo-height: 100vh;
+        --photo-max-width: 15%;
+        --photo-max-height: 15%;
     }
 }
 
@@ -277,4 +287,40 @@ blockquote {
 blockquote p {
     font-size: calc(var(--f-size) * var(--scale-m));
     margin-left: 1rem;
+}
+
+
+/* IMAGE */
+
+.grid-container {
+    margin: 0;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    display: flex ;
+}
+
+.img-wrap {
+    display: flex;
+    height: var(--photo-height);
+    /* background-color: #f0f0f0; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    max-width: calc(100% - var(--photo-max-width)); /* 100% width with a 10px margin on each side */
+    max-height: calc(100% - var(--photo-max-height)); /* 100% height with a 10px margin on top and bottom */
+    object-fit: contain;
+}
+
+figcaption {
+    max-width: calc(100% - var(--photo-max-width));
+    padding-top: 15px;
+    color: var(--text-low);
+    font-style: italic;
+    font-size: calc(var(--f-size) * var(--scale-s));
 }
