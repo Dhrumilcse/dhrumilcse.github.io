@@ -15,6 +15,5 @@
 
     echo $contentWithUrls;
     ?>
-</div>
 
 <?php snippet('footer-home') ?>
