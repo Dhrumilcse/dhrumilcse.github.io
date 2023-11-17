@@ -30,8 +30,6 @@ section {
     --max-width: 560px;
     --line-height: 1.75;
     --photo-height: 100vh;
-    --photo-max-height: 15%;
-    --photo-max-width: 15%;
 }
 
 @media (min-width: 250px) {
@@ -59,8 +57,6 @@ section {
     :root {
         --f-size: 1.115rem; 
         --max-width: 565px;
-        --photo-max-width: 15%;
-        --photo-max-height: 15%;
     }
 }
 
@@ -68,8 +64,6 @@ section {
     :root {
         --f-size: 1.25rem;
         --max-width: 635px;
-        --photo-max-width: 15%;
-        --photo-max-height: 15%;
     }
 }
 
@@ -77,8 +71,6 @@ section {
     :root {
         --f-size: 1.35rem;
         --max-width: 685px;
-        --photo-max-width: 15%;
-        --photo-max-height: 15%;
     }
 }
 
@@ -185,8 +177,8 @@ a:hover {
 }
 
 .svg {
-    width: 0.75rem; /* 3/4 of the default font size (1rem) */
-    height: 0.75rem; /* 3/4 of the default font size (1rem) */
+    width: 0.75rem;
+    height: 0.75rem;
     display: inline;
     margin-top: 2rem;
 }
@@ -309,13 +301,13 @@ figure {
 }
 
 img {
-    max-width: calc(100% - var(--photo-max-width)); 
-    max-height: calc(100% - var(--photo-max-height));
+    max-width: calc(100% - 15%); 
+    max-height: calc(100% - 15%);
     object-fit: contain;
 }
 
 figcaption {
-    max-width: calc(100% - var(--photo-max-width));
+    max-width: calc(100% - 15%);
     padding-top: 15px;
     color: var(--text-low);
     font-style: italic;
