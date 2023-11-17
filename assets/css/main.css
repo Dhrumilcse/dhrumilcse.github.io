@@ -30,6 +30,8 @@ section {
     --max-width: 560px;
     --line-height: 1.75;
     --photo-height: 100vh;
+    --photo-max-width: 5%;
+    --photo-max-height: 5%;
 }
 
 @media (min-width: 250px) {
