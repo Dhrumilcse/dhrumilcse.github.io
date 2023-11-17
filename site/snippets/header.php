@@ -14,8 +14,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dhrumil.ca/" />
-    <meta property="og:title" content="Dhrumil Patel" />
-    <meta property="og:description" content="Data, Dogs, and Minimalism." />
+    <meta property="og:title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title() . ' &mdash; Dhrumil'; ?>" />
+    <meta property="og:description" content="<?= $page->description() ?>" />
     <?php $ogImage = $page->isHomePage() ? 'og-light.png' : $page->title() . '.png';    ?>
     <meta property="og:image" content="<?= url('assets/image/' . $ogImage) ?>" />
 
@@ -23,8 +23,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://dhrumil.ca/" />
-    <meta property="twitter:title" content="Dhrumil Patel" />
-    <meta property="twitter:description" content="Data, Dogs, and Minimalism." />
+    <meta property="twitter:title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title() . ' &mdash; Dhrumil'; ?>" />
+    <meta property="twitter:description" content="<?= $page->description() ?>" />
     <meta property="twitter:image" content="<?= url('assets/image/' . $ogImage) ?>" />
 
     <title>Home</title>
