@@ -10,6 +10,9 @@ columns:
           title:
             type: text
             label: Title
+          description:
+            type: text
+            label: Description
           date:
             label: Date
             type: date

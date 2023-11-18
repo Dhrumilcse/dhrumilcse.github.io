@@ -1,7 +1,7 @@
 title: Site
 
 fields:
-  staticSiteGenerator:
-    label: Generate a static version of the site
+  # staticSiteGenerator:
+  #   label: Generate a static version of the site
   pages:
     type: pages

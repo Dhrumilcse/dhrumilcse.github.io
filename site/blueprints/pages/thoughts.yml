@@ -7,8 +7,11 @@ columns:
       fields:
         type: fields
         fields:
-          text:
-            type: textarea
+            description:
+              type: text
+              label: Description
+            text:
+              type: textarea
   sidebar:
     width: 2/3
     sections:
