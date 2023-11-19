@@ -8,9 +8,9 @@ Description: The world through my (mini) lens
 
 Text:
 
-(image: img_3178.jpeg caption: Sunshine and Sunflowers, Aug 2023 class:img-wrap)
+(image: img_3178.jpeg caption: Sunflowers and Sunshine, Aug 2023 class:img-wrap)
 (image: img_3449.jpeg caption: Oh the places you’ll go, July 2023 class:img-wrap)
-(image: img_2616.jpeg caption: Nature's Symphony, Jun 2023. class: img-wrap)
+(image: img_2616.jpeg caption: Nature's Symphony, Jun 2023 class: img-wrap)
 (image: img_2431.jpeg caption: The Himalayas, Dec 2021 class: img-wrap)
 
 ----
