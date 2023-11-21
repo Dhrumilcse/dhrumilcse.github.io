@@ -10,9 +10,9 @@ Text:
 
 I'm Dhrumil Patel, a product-minded engineer creating scalable and reliable data solutions. I also love minimalist design, dogs, and the outdoors. Currently working as a Senior Data Engineer at [Flashfood](https://flashfood.com) in Toronto. I also work on making [pet adoption](http://adoptpet.ca) more accessible.
 
-I write often. Sometimes just a couple words and sometimes elaborated essays. I share them both [here](/thoughts). I also write more technical content on [Medium](https://medium.com/@dhrumilcse).
+I write often. Sometimes just a couple of words and sometimes elaborated essays. I share them both [here](/thoughts). I also write more technical content on [Medium](https://medium.com/@dhrumilcse).
 
-I maintain a list of [books](/books) I read, a list of interesting [things I learn](/today) (almost) every day, and <a href="/photos" target="_blank">photos</a> I take occasionally.
+I maintain a list of [books](/books) I read, a list of interesting [things I learn](/today) (almost) every day, and [photos](/photos) I take occasionally.
 
 ----
 
