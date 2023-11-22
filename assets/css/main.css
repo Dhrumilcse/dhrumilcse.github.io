@@ -294,15 +294,16 @@ figure {
 .img-wrap {
     display: flex;
     height: var(--photo-height);
-    /* background-color: #f0f0f0; */
+    /* background-color: #FAFAFA; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 
 img {
-    max-width: calc(100% - 15%) !important; 
-    max-height: calc(100% - 15%) !important;
+    max-width: 85%; 
+    max-height: 85%;
 }
 
 figcaption {
