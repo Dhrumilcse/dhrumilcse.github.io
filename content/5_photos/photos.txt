@@ -8,14 +8,14 @@ Description: The world through my (mini) lens
 
 Text:
 
-(image: img_3178.jpeg caption: Sunflowers and Sunshine, Aug 2023 class:img-wrap)
-(image: img_3449.jpeg caption: Oh the places you’ll go, Jul 2023 class:img-wrap)
-(image: img_2616.jpeg caption: Nature's Symphony, Jun 2023 class: img-wrap)
-(image: img_6570.jpg caption: You and me, Jul 2022 class:img-wrap)
-(image: img_6365.jpg caption: We all have our favourites, May 2022 class: img-wrap)
-(image: img_2373.jpg caption: The Summit at 12,500ft, Dec 2021 class:img-wrap)
-(image: img_2431.jpeg caption: Living in the Himalayas, Dec 2021 class: img-wrap)
-(image: img_1116.jpg caption: World's Smallest Desert, Nov 2022 class: img-wrap)
+(image: img_3178.jpeg  caption: Sunflowers and Sunshine, Aug 2023      class:img-wrap)
+(image: img_3449.jpeg  caption: Oh the places you’ll go, Jul 2023      class:img-wrap)
+(image: img_2616.jpeg  caption: Nature's Symphony, Jun 2023            class: img-wrap)
+(image: img_6570.jpg   caption: You and me, Jul 2022                   class:img-wrap)
+(image: img_6365.jpg   caption: We all have our favourites, May 2022   class: img-wrap)
+(image: img_2373.jpg   caption: The Summit at 12,500ft, Dec 2021       class:img-wrap)
+(image: img_2431.jpeg  caption: Living in the Himalayas, Dec 2021      class: img-wrap)
+(image: img_1116.jpg   caption: World's Smallest Desert, Nov 2022      class: img-wrap)
 
 ----
 
