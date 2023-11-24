@@ -9,6 +9,7 @@ Description: The goal is to keep the curiosity alive
 Text:
 
 <br> Week 46
+Intro to [Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) — Andrej Karpathy
 How a [Fire Sprinkler](https://www.youtube.com/watch?v=NXAgjKDFc14) Works
 World's [Smallest Desert](https://weather.com/science/environment/news/2018-06-22-smallest-desert-canada-yukon-carcross)
 How [UPI](https://inc42.com/resources/the-upi-effect-how-upi-is-reshaping-indias-payment-industry/) Is Reshaping India’s Payment Industry
