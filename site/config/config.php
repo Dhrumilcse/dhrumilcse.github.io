@@ -1,7 +1,7 @@
 <?php
 
 return [
-    // 'url' => 'https://dhrumil.ca',
+    'url' => 'https://dhrumil.ca',
     'panel' => [
       'install' => true,
       'slug' => 'panel'
