@@ -2,6 +2,10 @@ Title: 404
 
 ----
 
+Description: The page is no longer available
+
+----
+
 Text:
 
 This page is no longer available. 
