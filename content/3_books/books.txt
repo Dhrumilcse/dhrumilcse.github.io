@@ -8,6 +8,9 @@ Description: I read so I can write better
 
 Text:
 
+<br>2024
+[White Mountain](https://literal.club/book/robert-twigger-white-mountain-clo94) by Robert Twigger \*
+[Good Economics for Hard Times](https://literal.club/dhrumil/book/good-economics-for-hard-times-6pmr4) by Abhijit Banerjee & Esther Duflo
 <br>2023
 [On Writing Well](https://literal.club/dhrumil/book/on-writing-well-30th-anniversary-edition-bcp1v) by William Zinsser
 [100 Whites](https://literal.club/dhrumil/book/100-whites-k5ggz) by Kenya Hara
@@ -48,7 +51,7 @@ Text:
 
 <br><br>Note
 Dropped books are marked with an asterisk. 
-Last updated on Nov 20th, 2023.
+Last updated on March 1st, 2024.
 
 ----
 
