@@ -25,53 +25,71 @@ section {
     --f-size: 1rem;
     --scale-s: 0.8;
     --scale-m: 0.96;
-    --scale-ml: 1.02;
+    --scale-ml: 1.04;
     --scale-l: 1.2;
-    --scale-xl: 1.45;
+    --scale-xl: 1.6;
     --max-width: 560px;
     --line-height: 1.75;
     --photo-height: 100vh;
 }
 
+/* 
+Screen  Old     New
+
+250     510     560
+500     510     590
+1000    545     610
+1500    565     640
+2000    635     710
+2250    685     760
+
+250     1.025   1.05
+500     1.05    1.075
+1000    1.075   1.115
+1500    1.115   1.15
+2000    1.25    1.25
+2250    1.35    1.35
+ */
+
 @media (min-width: 250px) {
     :root {
-        --f-size: 1.025rem;
-        --max-width: 510px;
+        --f-size: 1.05rem;
+        --max-width: 560px;
     }
 }
 
 @media (min-width: 500px) {
     :root {
-        --f-size: 1.05rem;
-        --max-width: 510px;
+        --f-size: 1.075rem;
+        --max-width: 590px;
     }
 }
 
 @media (min-width: 1000px) {
     :root {
-        --f-size: 1.075rem;
-        --max-width: 545px;
+        --f-size: 1.115rem;
+        --max-width: 610px;
     }
 }
 
 @media (min-width: 1500px) {
     :root {
-        --f-size: 1.115rem; 
-        --max-width: 565px;
+        --f-size: 1.15rem; 
+        --max-width: 640px;
     }
 }
 
 @media (min-width: 2000px) {
     :root {
         --f-size: 1.25rem;
-        --max-width: 635px;
+        --max-width: 710px;
     }
 }
 
 @media (min-width: 2250px) {
     :root {
         --f-size: 1.35rem;
-        --max-width: 685px;
+        --max-width: 760px;
     }
 }
 
@@ -223,14 +241,14 @@ h3 {
 
 .th-heading {
     font-size: calc(var(--f-size) * var(--scale-xl));
-    padding-top: 15%;
+    padding-top: 10%;
     color: var(--text);
 }
 
 .th-content {
-    font-size: calc(var(--f-size) * var(--scale-m));
-    padding-top: 10%;
-    color: var(--text-mid);
+    font-size: calc(var(--f-size) * var(--scale-ml));
+    padding-top: 5%;
+    color: var(--text-low);
 }
 
 
@@ -324,7 +342,21 @@ figcaption {
     font-size: calc(var(--f-size) * var(--scale-s));
 }
 
-.post-img {
+
+/* Works with >1000px screen size but not for mobile */
+/* Upload photos only on the photos page */
+
+/* .post-img {
     max-width: 100%; 
     max-height: 100%;
 }
+
+.post-img-wrap {
+    display: flex;
+    height: calc(var(--photo-height) * 0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+} */
