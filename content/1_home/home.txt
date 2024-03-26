@@ -8,7 +8,7 @@ Description: Data, Dogs, and Minimalism
 
 Text:
 
-I'm Dhrumil Patel, a product-minded engineer creating scalable and reliable data solutions. I also love minimalist design, dogs, and the outdoors. Currently working as a <s>Senior Data Engineer</s> Technical Product Manager for Data at [Flashfood](https://flashfood.com) in Toronto. I also work on making [pet adoption](http://adoptpet.ca) more accessible.
+I'm Dhrumil Patel, a product-minded engineer creating scalable and reliable data products. I also love minimalist design, dogs, and the outdoors. Currently working as a <s>Senior Data Engineer</s> Technical Product Manager for Data at [Flashfood](https://flashfood.com) in Toronto. I also work on making [pet adoption](http://adoptpet.ca) more accessible.
 
 I write often. Sometimes just a couple of words and sometimes elaborated essays. I share them both [here](/thoughts). I also write more technical content on [Medium](https://medium.com/@dhrumilcse).
 
