@@ -98,6 +98,7 @@ Screen  Old     New
     :root {
         --background: #111;
         --text: #C7C8CA;
+        --text-mid-low: #a2a2a2;
         --text-mid: #a4a6a8;
         --text-low: #737476;
         --line: #656565;
