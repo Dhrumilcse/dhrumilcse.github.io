@@ -20,16 +20,17 @@ section {
     --background: #fff;
     --text: #111111;
     --text-mid: #333333;
+    --text-mid-low: #444444;
     --text-low: #555555;
     --line: #999999;
     --f-size: 1rem;
     --scale-s: 0.8;
     --scale-m: 0.96;
-    --scale-ml: 1.04;
+    --scale-ml: 0.995;
     --scale-l: 1.2;
-    --scale-xl: 1.6;
+    --scale-xl: 1.55;
     --max-width: 560px;
-    --line-height: 1.75;
+    --line-height-th-content: 1.935;
     --photo-height: 100vh;
 }
 
@@ -109,7 +110,7 @@ Screen  Old     New
 }
 
 body {
-    line-height: 1.75;
+    line-height: 1.8;
     display: flex;
     justify-content: center;
     font-family: "Graphik Web Regular", "Iowan Old Style", "Iowan", "Charter", "Palatino Linotype", "Palatino", "Book Antiqua", "Palatino LT STD", Times New Roman, serif;
@@ -248,7 +249,8 @@ h3 {
 .th-content {
     font-size: calc(var(--f-size) * var(--scale-ml));
     padding-top: 5%;
-    color: var(--text-low);
+    line-height: var(--line-height-th-content);
+    color: var(--text-mid-low);
 }
 
 
