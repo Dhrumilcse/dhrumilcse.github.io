@@ -1,0 +1,38 @@
+Title: Perfumes
+
+----
+
+Description: List of perfumes I've tried, rated
+
+----
+
+Date: 2025-05-06
+
+----
+
+Text:
+
+<br>10/10
+Guess – Forever Man
+Ferrari – Racing Red
+Nautica – Voyage Sport
+Mont Blanc – Explorer
+Jimmy Choo – Ice
+The Body Shop – White Musk Sport
+Jean Marc Paris – Paris Bleu
+Bath and Body Works – Bourban
+
+<br>9/10
+Perry Ellis – Night by Perry Ellis
+Azzaro – Chrome
+Versace – Dreamer
+
+<br>8/10
+–
+
+<br>Not recommended
+–
+
+----
+
+Uuid: BlFHMQ7eNxCrhGF2

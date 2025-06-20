@@ -1,0 +1,23 @@
+Title: To-do
+
+----
+
+Description: To-do list for the porfolio
+
+----
+
+Date: 2025-02-15
+
+----
+
+Text:
+
+P1
+- Image class for the posts
+
+P2
+- Add projects
+
+----
+
+Uuid: kblKlVPbmWnMB9cu

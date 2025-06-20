@@ -8,6 +8,10 @@ Description: The world through my (mini) lens
 
 Text:
 
+(image: cape-spear.jpg caption: Far east, Jul 2024 class:img-wrap)
+(image: hollow-coves.jpeg caption: Hollow Coves, Jun 2024 class:img-wrap)
+(image: stare-contest.jpeg caption: Stare Contest, May 2024 class:img-wrap)
+(image: spring.jpg caption: Spring, April 2024 class:img-wrap)
 (image: img_3178.jpeg  caption: Sunflowers and Sunshine, Aug 2023      class:img-wrap)
 (image: img_3449.jpeg  caption: Oh the places you’ll go, Jul 2023      class:img-wrap)
 (image: img_2616.jpeg  caption: Nature's Symphony, Jun 2023            class: img-wrap)
