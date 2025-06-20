@@ -7,11 +7,11 @@ Description: Data, Dogs, and Minimalism
 ----
 
 Text:
-I'm Dhrumil Patel, a product-minded engineer building scalable, reliable data products. I love minimalist design, dogs, and the outdoors. Currently working on data engineering systems at [Instacart](https://www.instacart.com/) in Toronto, also working on making [pet adoption](http://adoptpet.ca) more accessible.
+I'm Dhrumil Patel, a product-minded engineer building scalable, reliable data products. I love minimalist design, dogs, and the outdoors. Currently working on data engineering systems at [Instacart](https://www.instacart.com/) in Toronto.
 
-I write often. Sometimes just a couple of words and sometimes elaborated essays. I share them both [here](/thoughts). I also write more technical content on [Medium](https://medium.com/@dhrumilcse).
+I (used to) write often. Sometimes just a couple of words and sometimes elaborated essays. I share them both [here](/thoughts). I also write more technical content on [Medium](https://medium.com/@dhrumilcse).
 
-I (infrequently) maintain a list of [books](/books) I read, a list of interesting [things I learn](/today) (almost) every day, and [photos](https://dhrumil.ca/photos) I take occasionally.
+I (infrequently) maintain a list of [books](/books) I read, [things I learn](/today), and [photos](https://dhrumil.ca/photos) I take occasionally.
 ----
 
 Uuid: eeCxRp1K8aI7k2Qe
