@@ -1,1 +1,16 @@
 Title: Coffee
+
+----
+
+Description: Roasters I tried and want to try
+
+----
+
+Text:
+
+<br>Currently
+Giant Espresso by Affect Coffee
+<br>Next up
+Hale Coffee
+<br>Tried
+Starbucks Roastery Chicago

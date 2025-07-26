@@ -11,7 +11,7 @@ I'm Dhrumil Patel, a product-minded engineer building scalable, reliable data pr
 
 I (used to) write often. Sometimes just a couple of words and sometimes elaborated essays. I share them both [here](/thoughts). I also write more technical content on [Medium](https://medium.com/@dhrumilcse).
 
-I infrequently maintain a list of [books](/books) I read, [things I learn](/today), and [photos](/photos) I take.
+Infrequently maintain a list of [books](/books) I read, [things I learn](/today), [photos](/photos) I take, and [coffees](/coffee) I tried.
 ----
 
 Uuid: eeCxRp1K8aI7k2Qe
