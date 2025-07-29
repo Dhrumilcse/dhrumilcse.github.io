@@ -30,7 +30,7 @@ section {
     --scale-l: 1.2;
     --scale-xl: 1.55;
     --max-width: 560px;
-    --line-height-th-content: 1.935;
+    --line-height-th-content: 1.735;
     --photo-height: 100vh;
 }
 
@@ -257,7 +257,7 @@ h3 {
 
 .wrap-thought p + p {
     padding-top: 15px;
-    text-indent: 1.5em;
+    /* text-indent: 1.5em; */
 }
 
 
@@ -284,9 +284,9 @@ h3 {
 /* BLOCK QUOTES */
 
 
-blockquote + p {
+/* blockquote + p {
     text-indent: 1.5em;
-}
+} */
 
 blockquote {
     margin-left: 0;
