@@ -30,7 +30,7 @@ section {
     --scale-l: 1.2;
     --scale-xl: 1.55;
     --max-width: 560px;
-    --line-height-th-content: 1.735;
+    --line-height-th-content: 1.835;
     --photo-height: 100vh;
 }
 
@@ -242,21 +242,21 @@ h3 {
 }
 
 .th-heading {
-    font-size: calc(var(--f-size) * var(--scale-xl));
+    font-size: calc(var(--f-size) * var(--scale-l));
     padding-top: 10%;
     color: var(--text);
 }
 
 .th-content {
     font-size: calc(var(--f-size) * var(--scale-ml));
-    padding-top: 5%;
+    padding-top: 2.5%;
     line-height: var(--line-height-th-content);
     color: var(--text-mid-low);
 }
 
 
 .wrap-thought p + p {
-    padding-top: 15px;
+    padding-top: 25px;
     /* text-indent: 1.5em; */
 }
 
@@ -265,8 +265,8 @@ h3 {
 
 .thoughts-footer {
     display: flex;
-    padding-top: 15%;
-    padding-bottom: 15%;
+    padding-top: 5%;
+    padding-bottom: 10%;
     color: var(--text-low);
 }
 
