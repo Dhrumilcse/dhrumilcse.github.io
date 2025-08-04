@@ -55,8 +55,6 @@ only now
 
 – dh
 
-(image: woods.jpeg class:img-post)
-
 ----
 
 Uuid: oud2M4KxoSAXfydV
