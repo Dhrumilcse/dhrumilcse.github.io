@@ -9,8 +9,22 @@ Description: Roasters I tried and want to try
 Text:
 
 <br>Currently
-Giant Espresso by Affect Coffee
+Three Monkeys Coffee (Cusco)
+
 <br>Next up
-Hale Coffee
+tbd
+
 <br>Tried
+[Espresso blend](https://balzacs.com/products/espresso-blend?variant=42118343065756) by Balzac's (0, 17g, 1:2.3)
+[Espresso blend](https://www.halecoffee.com/products/hale-espresso) by Hale Coffee (4, 18g, 1:2.2)
+Giant Espresso by Affect Coffee (4, 18g, 1:2)
 Starbucks Roastery Chicago
+
+<br>
+0-9 — Grind setting on my Barista Express
+9/18g — Coffee input in grams
+1:2 — Brew ration
+
+----
+
+Uuid: J2FyKp6anzlVZSxF
