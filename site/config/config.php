@@ -2,6 +2,7 @@
 
 return [
     'url' => 'https://dhrumil.ca',
+    // 'url' => 'http://localhost:9000',
     'panel' => [
       'install' => true,
       'slug' => 'panel'

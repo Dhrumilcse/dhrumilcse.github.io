@@ -25,6 +25,7 @@ section {
     --line: #999999;
     --f-size: 1rem;
     --scale-s: 0.8;
+    --scale-sm: 0.94;
     --scale-m: 0.96;
     --scale-ml: 0.995;
     --scale-l: 1.2;
@@ -177,6 +178,13 @@ a:hover {
     color: var(--text-low);
 }
 
+.subsection {
+    padding-top: 0;
+    padding-bottom: 2rem;
+    font-size: calc(var(--f-size) * var(--scale-sm));
+    color: var(--text-mid-low);
+}
+
 .section-right {
     padding-top: 10%;
     padding-bottom: 1.5%;
@@ -195,6 +203,7 @@ a:hover {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    margin-bottom: 2rem;
 }
 
 .svg {
