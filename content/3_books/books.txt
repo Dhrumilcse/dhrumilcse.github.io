@@ -8,6 +8,11 @@ Description: I read so I can write better
 
 Text:
 
+*Dropped books are marked with an asterisk. *
+
+<br>2025
+[Other Minds](https://literal.club/dhrumil/book/other-minds-xwnjp) by Peter Godfrey-Smith
+
 <br>2024
 [Attention Span](https://literal.club/dhrumil/book/gloria-mark-attention-span-r32hn) by Gloria Mark
 [First, Break All The Rules](https://literal.club/dhrumil/book/first-break-all-the-rules-l1cqa) by Marcus Buckingham
@@ -51,9 +56,8 @@ Text:
 [Elon Musk](https://literal.club/book/elon-musk-n8788) by Ashlee Vance
 [Dream With Your Eyes Open](https://literal.club/book/dream-with-your-eyes-open-45zoy) by Ronnie Screwvala
 
-<br><br>Note
-Dropped books are marked with an asterisk. 
-Last updated on March 1st, 2024.
+<br>
+Last updated on January 1st, 2026.
 
 ----
 

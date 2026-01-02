@@ -8,6 +8,10 @@ Description: The goal is to keep the curiosity alive
 
 Text:
 
+<br> Week 41
+Build your own [database](https://www.nan.fyi/database)
+[Tamale](https://en.wikipedia.org/wiki/Tamale)
+
 <br> 2025 &nbsp; — &nbsp; Week 39
 Where have all the Canadian startups [gone](https://www.leaders.vc/canadianstartups)?
 [Getting more strategic](https://cate.blog/2025/09/23/getting-more-strategic/)
