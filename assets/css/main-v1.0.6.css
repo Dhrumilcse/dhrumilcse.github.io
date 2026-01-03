@@ -55,7 +55,7 @@ Screen  Old     New
 
 @media (min-width: 250px) {
     :root {
-        --f-size: 1.05rem;
+        --f-size: 1.06rem;
         --max-width: 560px;
     }
 }
