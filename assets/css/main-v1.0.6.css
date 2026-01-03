@@ -137,9 +137,6 @@ p {
     margin: 5vw;
 }
 
-
-
-
 /* LINKS  */
 
 a {
@@ -166,8 +163,6 @@ a:hover {
 .a-disabled {
     pointer-events: none;
 }
-
-
 
 /* SECTION */
 
@@ -200,14 +195,27 @@ a:hover {
 
 /* UNIQUE */
 
+@media (min-width: 1000px) {
+    .home-now {
+        display: inline;
+    }
+}
+
 .home-icon-circle {
     /* Or #FF2E00 - more dark */
     background-color: #FF4F00;
     width: 18px;
     height: 10px;
     border-radius: calc(infinity * 1px);
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 1000px) {
+    .home-icon-circle {
+        margin-top: 3rem;
+        margin-bottom: 3.5rem;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -223,11 +231,7 @@ a:hover {
     margin-top: 2rem;
 }
 
-
-
-
 /* ALL THOUGHTS */
-
 
 .thought {
     display: flex;
@@ -249,8 +253,6 @@ a:hover {
     align-self: flex-end;
     margin-bottom: 0.55rem;
 }
-
-
 
 
 /* INDIVIDUAL THOUGHTS */
@@ -311,7 +313,6 @@ h3 {
 .p-footer:hover {
     color: var(--text);
 }
-
 
 
 /* BLOCK QUOTES */
