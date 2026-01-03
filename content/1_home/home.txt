@@ -12,7 +12,7 @@ Text:
 I'm Dhrumil Patel, a software and data engineer building scalable, reliable products. I care deeply about clarity, quality, and building things that last.
 
 <br> Now
-Ads engineering at [Instacart](https://www.instacart.com/), and <span class="home-now"> team of one at [Navigator](https://usenavigator.co).</span>
+Ads engineering at [Instacart](https://www.instacart.com/), <span class="home-now"> building [Navigator](https://usenavigator.co) as a team of one.</span>
 
 <br> Thoughts
 I like to write—sometimes just a few words and sometimes longer essays. I share them both [here](/thoughts). I also used to write technical content on [Medium](https://medium.com/@dhrumilcse).

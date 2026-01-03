@@ -195,6 +195,10 @@ a:hover {
 
 /* UNIQUE */
 
+.home-now {
+    display: block;
+}
+
 @media (min-width: 1000px) {
     .home-now {
         display: inline;
