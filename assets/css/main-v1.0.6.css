@@ -347,39 +347,65 @@ blockquote p {
 
 .post-image {
     display: block;
-    max-width: 640px;
-    width: 100%;
+    max-width: 640px !important;
+    width: 100% !important;
     height: auto;
     margin: 2.5rem auto;
     border-radius: 10px;
 }
 
+figure:has(.post-image) {
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 @media (min-width: 500px) {
     .post-image {
+        max-width: 670px !important;
+    }
+    
+    figure:has(.post-image) {
         max-width: 670px;
     }
 }
 
 @media (min-width: 1000px) {
     .post-image {
+        max-width: 690px !important;
+    }
+    
+    figure:has(.post-image) {
         max-width: 690px;
     }
 }
 
 @media (min-width: 1500px) {
     .post-image {
+        max-width: 720px !important;
+    }
+    
+    figure:has(.post-image) {
         max-width: 720px;
     }
 }
 
 @media (min-width: 2000px) {
     .post-image {
+        max-width: 790px !important;
+    }
+    
+    figure:has(.post-image) {
         max-width: 790px;
     }
 }
 
 @media (min-width: 2250px) {
     .post-image {
+        max-width: 840px !important;
+    }
+    
+    figure:has(.post-image) {
         max-width: 840px;
     }
 }
