@@ -8,6 +8,14 @@ Description: The goal is to keep the curiosity alive
 
 Text:
 
+<br> Week 02
+[Astroturfing](https://en.wikipedia.org/wiki/Astroturfing)
+
+<br> 2026 &nbsp; — &nbsp; Week 01
+[Chicory](https://en.wikipedia.org/wiki/Chicory) - plant used to make filter coffee
+[The two-streams hypothesis](https://en.wikipedia.org/wiki/Two-streams_hypothesis)
+[Swahilli](https://en.wikipedia.org/wiki/Swahili), a lingua franca
+
 <br> Week 41
 Build your own [database](https://www.nan.fyi/database)
 [Tamale](https://en.wikipedia.org/wiki/Tamale)
