@@ -31,7 +31,7 @@ section {
     --scale-l: 1.3;
     --scale-xl: 1.55;
     --max-width: 560px;
-    --line-height-th-content: 1.735;
+    --line-height-th-content: 1.835;
     --photo-height: 100vh;
 }
 
@@ -343,6 +343,45 @@ blockquote p {
 
 .grid-container {
     margin: 0;
+}
+
+.post-image {
+    display: block;
+    max-width: 640px;
+    width: 100%;
+    height: auto;
+    margin: 2.5rem auto;
+    border-radius: 10px;
+}
+
+@media (min-width: 500px) {
+    .post-image {
+        max-width: 670px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .post-image {
+        max-width: 690px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .post-image {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 2000px) {
+    .post-image {
+        max-width: 790px;
+    }
+}
+
+@media (min-width: 2250px) {
+    .post-image {
+        max-width: 840px;
+    }
 }
 
 figure {
