@@ -1,0 +1,32 @@
+Title: Deploy, then develop
+
+----
+
+Description: From an idea to a system that exists
+
+----
+
+Date: 2026-01-08
+
+----
+
+Text:
+
+Everyone is building right now, as they should. My one piece of advice: deploy the skeleton first, then build your first button, page, or feature.
+
+By doing so, you reduce unknowns early and lock in decisions that are painful to change later. Rewrites are expensive in cognitive load, not code, and that's one reason people abandon otherwise great ideas.
+
+What I'd lock down as early as possible, because they compound later:
+- deployment platform
+- package/project managers
+- project structure
+- database
+- code formatting (lint, type, etc)
+
+Deploying first also gives you an end-to-end sense of the product early. You stop thinking in isolated *files* and start thinking in *flows*. From request to database to response. From build to deploy to failure. The product stops being an idea in your editor and starts feeling like a system that exists in the real world.
+
+The goal is balance, not perfection. Don't overcomplicate it. Understand the tradeoffs, choose what makes sense for *this* project, and get started.
+
+----
+
+Uuid: ixpndBh7BSnwjwrO
