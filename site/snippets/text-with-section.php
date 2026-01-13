@@ -9,17 +9,32 @@
     <?php foreach ($paragraphs as $paragraph): ?>
     
         <?php
+        // Check if paragraph starts with newline (no text immediately after <br>)
+        $startsWithNewline = preg_match('/^\s*\n/', $paragraph);
+        
         $trimmedParagraph = trim($paragraph);
-        $lines = explode("\n", $trimmedParagraph);
-        $section = $lines[0];
-        $content = implode("\n", array_slice($lines, 1));
+        if (empty($trimmedParagraph)) continue;
+        
+        if ($startsWithNewline) {
+            // No section title, just display content
+            ?>
+            <p><?= $trimmedParagraph ?></p>
+            <?php
+        } else {
+            // Has section title on same line as <br>
+            $lines = explode("\n", $trimmedParagraph);
+            $section = $lines[0];
+            $content = implode("\n", array_slice($lines, 1));
+            ?>
+            <p class="section">
+                <?= $section ?>
+            </p>    
+            <?php if (!empty($content)): ?>
+            <p>
+            <?= $content ?>
+            </p>
+            <?php endif; ?>
+            <?php
+        }
         ?>
-
-        <p class="section">
-            <?= $section ?>
-        </p>    
-
-        <p>
-        <?= $content ?>
-        </p>
     <?php endforeach; ?>
