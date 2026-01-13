@@ -8,6 +8,7 @@ Description: The world through my (mini) lens
 
 Text:
 
+(image: dsc04465.jpeg caption: Living the Italian life, May 2025 class:img-wrap)
 (image: cape-spear.jpg caption: Far east, Jul 2024 class:img-wrap)
 (image: hollow-coves.jpeg caption: Hollow Coves, Jun 2024 class:img-wrap)
 (image: stare-contest.jpeg caption: Stare Contest, May 2024 class:img-wrap)

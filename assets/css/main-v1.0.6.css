@@ -17,7 +17,7 @@ section {
 
 
 :root {
-    --background: #f6f4ee;
+    --background: #fefcfa;
     --text: #111111;
     --text-mid: #555555;
     --text-mid-low: #666666;
@@ -209,7 +209,7 @@ ul {
 
 .home-icon-circle {
     /* Or #FF2E00 - more dark */
-    background-color: #E0734A;
+    background-color: #e0734a;
     width: 18px;
     height: 10px;
     border-radius: calc(infinity * 1px);
