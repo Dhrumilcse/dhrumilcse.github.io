@@ -10,21 +10,25 @@
     
     // Process all sections
     foreach ($sections as $section) {
+        // Check if section starts with newline (no text immediately after <br>)
+        $startsWithNewline = preg_match('/^\s*\n/', $section);
+        
         $section = trim($section);
         if (empty($section)) continue;
         
-        // Split into first line and remaining content
-        $lines = explode("\n", $section, 2);
-        $firstLine = trim($lines[0]);
-        $content = isset($lines[1]) ? trim($lines[1]) : '';
-        
-        // If there's content after the first line, treat first line as section header
-        if (!empty($content)) {
-            echo '<p class="section">' . htmlspecialchars($firstLine) . '</p>';
-            echo '<p>' . kirbytext($content) . '</p>';
+        if ($startsWithNewline) {
+            // No section title, just display content
+            echo '<p>' . kirbytext($section) . '</p>';
         } else {
-            // No content after first line, just display the first line as content
-            echo '<p>' . kirbytext($firstLine) . '</p>';
+            // Has section title on same line as <br>
+            $lines = explode("\n", $section, 2);
+            $firstLine = trim($lines[0]);
+            $content = isset($lines[1]) ? trim($lines[1]) : '';
+            
+            echo '<p class="section">' . htmlspecialchars($firstLine) . '</p>';
+            if (!empty($content)) {
+                echo '<p>' . kirbytext($content) . '</p>';
+            }
         }
         echo "\n";
     }

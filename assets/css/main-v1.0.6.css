@@ -17,19 +17,20 @@ section {
 
 
 :root {
-    --background: #fff;
+    --background: #f6f4ee;
     --text: #111111;
     --text-mid: #555555;
     --text-mid-low: #666666;
     --text-low: #777777;
     --line: #d0d0d0;
     --f-size: 1rem;
+    --f-weight: 400;
     --scale-s: 0.8;
     --scale-sm: 0.94;
     --scale-m: 0.96;
     --scale-ml: 1.05;
-    --scale-l: 1.3;
-    --scale-xl: 1.55;
+    --scale-l: 1.25;
+    --scale-xl: 1.45;
     --max-width: 560px;
     --line-height-th-content: 1.835;
     --photo-height: 100vh;
@@ -117,6 +118,7 @@ body {
     justify-content: center;
     font-family: "Graphik Web Regular", "Iowan Old Style", "Iowan", "Charter", "Palatino Linotype", "Palatino", "Book Antiqua", "Palatino LT STD", Times New Roman, serif;
     font-size: var(--f-size);
+    font-weight: var(--f-weight);
     color: var(--text);
     background: var(--background);
     -webkit-font-smoothing: antialiased;
@@ -188,9 +190,9 @@ a:hover {
     text-align: right;
 }
 
-.sub-title {
-    font-size: calc(var(--f-size) * var(--scale-m));
-    color: var(--text-mid-low);
+
+ul {
+    list-style-type: circle;
 }
 
 /* UNIQUE */
@@ -207,18 +209,18 @@ a:hover {
 
 .home-icon-circle {
     /* Or #FF2E00 - more dark */
-    background-color: #FF4F00;
+    background-color: #E0734A;
     width: 18px;
     height: 10px;
     border-radius: calc(infinity * 1px);
     margin-top: 2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 @media (min-width: 1000px) {
     .home-icon-circle {
-        margin-top: 3rem;
-        margin-bottom: 3.5rem;
+        margin-top: 2.5rem;
+        margin-bottom: 4rem;
     }
 }
 
@@ -290,7 +292,7 @@ h3 {
     font-size: var(--f-size);
     padding-top: 2.5%;
     line-height: var(--line-height-th-content);
-    color: var(--text-mid-low);
+    color: var(--text);
 }
 
 
