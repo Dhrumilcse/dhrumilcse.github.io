@@ -7,6 +7,8 @@ Description: The goal is to keep the curiosity alive
 ----
 
 Text:
+<br> Week 03
+[Metronome](https://en.wikipedia.org/wiki/Metronome) – device generating audible click
 
 <br> Week 02
 [Astroturfing](https://en.wikipedia.org/wiki/Astroturfing) – deceptive marketing tactic
