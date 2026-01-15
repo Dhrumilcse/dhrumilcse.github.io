@@ -30,6 +30,7 @@
     <meta property="og:title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title(); ?>" />
     <meta property="og:description" content="<?= $page->description() ?>" />
     <meta property="og:image" content="<?= url('assets/image/' . $ogImage) ?>" />
+    <meta property="og:site_name" content"Dhrumil Patel">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
