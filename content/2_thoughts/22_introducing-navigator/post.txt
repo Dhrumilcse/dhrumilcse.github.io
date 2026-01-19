@@ -1,0 +1,37 @@
+Title: Introducing Navigator
+
+----
+
+Description: A simple, fast, developer-first log monitoring
+
+----
+
+Date: 2026-01-07
+
+----
+
+Text:
+
+Observability has quietly become one of the most critical parts of building reliable software. When something breaks, logs are often the first place engineers go to understand what’s happening.
+
+And yet, for how important logs are, most observability tools feel oddly misaligned with how engineers actually debug.
+
+Across every workplace I’ve been part of, the pattern repeated: powerful tools built for every possible use case, optimized for very few that matter day to day. What should be a simple question – what just went wrong? – turns into a slow search through noise.
+
+About six months ago, I kept coming back to the same question:
+
+*What if Linear built an observability tool?*
+
+Not “more dashboards” or “more configurations,” but something opinionated around speed and clarity to find out what broke. A tool built for debugging, not for configuration.
+
+(image: 00.jpg caption: Navigator in action class:th-image)
+
+To start, Navigator focuses on what matters most when you’re debugging logs: filtering and search, and get you to the answer “what broke?” as fast a possible. It’s inspired by Linear’s philosophy more than its feature set — fast by default, minimal where possible, and designed to help you move forward instead of slow you down.
+
+This is still very early and Navigator isn’t perfect – in functionality, performance, or polish – but it represents a direction I deeply believe in. A calmer, more intentional approach to observability: helping you debug and ship faster now, and eventually owning more of the debugging so you can focus on shipping.
+
+If this resonates, I’d love for you to try the [demo](https://demo.usenavigator.co) and [hear](https://x.com/dhrumil) how you debug.
+
+----
+
+Uuid: riGbuqBSSQBQVcEC

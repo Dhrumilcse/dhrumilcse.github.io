@@ -1,0 +1,31 @@
+Title: Maintenance is the new bottleneck
+
+----
+
+Description: And why observability isn't the answer
+
+----
+
+Date: 2026-01-15
+
+----
+
+Text:
+
+The act of building software has been unbundled from the identity of being a "software engineer." Tools, frameworks, and platforms have made shipping accessible to almost anyone with an idea. Getting to a working prototype, or a full-featured app, is no longer the bottleneck. For most builders, that's the finish line. Shipping is the goal. However, when one bottleneck disappears, another takes its place: who maintains the apps everyone is building?
+
+This shift has quietly changed what builders care about. They don't think about observability when they start, or even after they finish. They don't want to configure dashboards, traces, or alerting rules. They want their app to work. Observability only enters the picture when something breaks, and even then it's not because they want more data, it's because they want answers. What broke? Why did it break? What should I do next?
+
+Underneath all of this is responsibility, the kind that quietly slows you down. Once something is live, someone has to pay active attention when it misbehaves, understand what changed, decide whether it matters, and if it does, figure out how to fix it. 
+
+Most tools stop halfway through that journey. They tell you something is wrong, sometimes even why, and then hand the hardest part back to the human: deciding and acting. That gap - between knowing and fixing - is where responsibility starts pulling attention away from building.
+
+We've treated observability as the product, which may have made sense in the past, but in today's reality it's just a means to an end. The obvious next step is not better dashboards, but fewer decisions. Instead of asking builders to interpret signals, the system should absorb that responsibility itself. Watch the logs. Recognize a known pattern. Explain the cause in plain language. Suggest a fix, and eventually, just fix it. 
+
+Think about this: A deprecation warning appears in production logs, the dependency is outdated, the fix is well understood - why should a human have to notice this, open an issue, create a branch, and submit a pull request? In many cases, that entire loop can run in the background.
+
+The end state isn't "AI observability." It's software that closes the loop, by progressively removing the boring, obvious, and repetitive work. Software that watches, understands, acts, verifies, and reports back. The kind of software that doesn't just explain problems, but quietly takes care of them.
+
+----
+
+Uuid: tOHuLQTAIkb0W3YO
