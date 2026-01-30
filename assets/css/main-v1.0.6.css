@@ -15,6 +15,20 @@ section {
     src: url('../fonts/Inter.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Instrument Serif Regular';
+    src: url('../fonts/InstrumentSerif-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Instrument Serif Italic';
+    src: url('../fonts/InstrumentSerif-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
 
 :root {
     --background: #fefcfa;
@@ -32,6 +46,10 @@ section {
     --scale-ml: 1.0;
     --scale-l: 1.2;
     --scale-xl: 1.325;
+    --scale-2xl: 1.5;
+    --scale-3xl: 2.5;
+    --scale-4xl: 3;
+    --scale-5xl: 3.5;
     --max-width: 560px;
     --line-height-th-content: 1.735;
     --photo-height: 100vh;
@@ -426,6 +444,30 @@ figure {
     margin-bottom: 30px;
 }
 
+.img-wrap h1 {
+    font-family: 'Instrument Serif Italic', serif;
+    font-size: calc(var(--f-size) * var(--scale-3xl));
+    margin: 0;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    max-width: 90vw;
+    text-align: center;
+    padding: 0 5vw;
+}
+
+.img-wrap h3 {
+    font-family: 'Instrument Serif Regular', serif;
+    font-style: normal;
+    line-height: 1.4;
+    font-size: calc(var(--f-size) * var(--scale-xl));
+    color: var(--text-mid);
+    margin: 0;
+    margin-bottom: 1rem;
+    max-width: 85vw;
+    text-align: center;
+    padding: 0 5vw;
+}
+
 .img-wrap img {
     max-width: 90vw;
     max-height: 50vh;
@@ -436,11 +478,10 @@ figure {
 }
 
 figcaption {
+    font-family: 'Instrument Serif Italic', serif;
     max-width: 85%;
     text-align: center;
     color: var(--text-low);
-    font-style: italic;
-    font-size: calc(var(--f-size) * var(--scale-s));
     padding: 15px 1rem 0;
     margin: 0 auto;
 }
@@ -450,8 +491,17 @@ figcaption {
         max-width: 85vw;
         max-height: 70vh;
     }
-    
-    figcaption {
-        max-width: 80%;
+}
+
+@media (min-width: 1200px) {
+    .img-wrap h1 {
+        font-size: calc(var(--f-size) * var(--scale-5xl));
+        margin-bottom: 0.5rem;
+    }
+
+    .img-wrap h3 {
+        line-height: 1.65;
+        font-size: calc(var(--f-size) * var(--scale-2xl));
+        margin-bottom: 0.5rem;
     }
 }

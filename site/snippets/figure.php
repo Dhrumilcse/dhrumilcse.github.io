@@ -1,5 +1,7 @@
 <!-- site/snippets/figure.php -->
-<figure class="<?= $class->class() ?>">
+<figure class="<?= isset($class) ? $class->class() : '' ?>">
     <img src="<?= $url ?>" alt="<?= $alt ?>">
-    <figcaption><?= $caption ?></figcaption>
+    <?php if (!empty($caption)): ?>
+        <figcaption><?= $caption ?></figcaption>
+    <?php endif; ?>
 </figure>
