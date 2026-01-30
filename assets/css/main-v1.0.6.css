@@ -16,14 +16,14 @@ section {
 }
 
 @font-face {
-    font-family: 'Instrument Serif Regular';
+    font-family: 'Instrument Serif';
     src: url('../fonts/InstrumentSerif-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Instrument Serif Italic';
+    font-family: 'Instrument Serif';
     src: url('../fonts/InstrumentSerif-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
@@ -31,7 +31,7 @@ section {
 
 
 :root {
-    --background: #fefcfa;
+    --background: #ffffff;
     --text: #111111;
     --text-mid: #555555;
     --text-mid-low: #666666;
@@ -445,25 +445,24 @@ figure {
 }
 
 .img-wrap h1 {
-    font-family: 'Instrument Serif Italic', serif;
-    font-size: calc(var(--f-size) * var(--scale-3xl));
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: calc(var(--f-size) * 2.5);
     margin: 0;
     margin-top: -2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     max-width: 90vw;
     text-align: center;
     padding: 0 5vw;
 }
 
 .img-wrap h3 {
-    font-family: 'Instrument Serif Regular', serif;
+    font-family: 'Instrument Serif', serif;
     font-style: normal;
-    line-height: 1.4;
-    font-size: calc(var(--f-size) * var(--scale-xl));
+    font-size: calc(var(--f-size) * 1.3);
     color: var(--text-mid);
     margin: 0;
-    margin-bottom: 1rem;
-    max-width: 85vw;
+    max-width: 90vw;
     text-align: center;
     padding: 0 5vw;
 }
@@ -478,10 +477,12 @@ figure {
 }
 
 figcaption {
-    font-family: 'Instrument Serif Italic', serif;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
     max-width: 85%;
     text-align: center;
     color: var(--text-low);
+    font-size: calc(var(--f-size) * var(--scale-s));
     padding: 15px 1rem 0;
     margin: 0 auto;
 }
