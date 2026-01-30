@@ -447,7 +447,7 @@ figure {
 .img-wrap h1 {
     font-family: 'Instrument Serif', serif;
     font-style: italic;
-    font-size: calc(var(--f-size) * 3);
+    font-size: calc(var(--f-size) * 2.75);
     margin: 0;
     margin-top: -2rem;
     margin-bottom: 1rem;
