@@ -7,7 +7,15 @@ Description:
 ----
 
 Text:
+
 # 36 Views of Toronto
-### Katsushika Hokusai was in his 70s when he produced thirty-six views of Mount Fuji.
-### Inspired by that, I wanted to create something similar for the city that I am deeply in love with.
-### The subject is going one icon that comes to mind as soon as one hears Toronto &mdash; the CN Tower. 
+### Katsushika Hokusai created (link: https://en.wikipedia.org/wiki/Thirty-six_Views_of_Mount_Fuji text: Thirty-six Views of Mount Fuji), a series centered on a single subject.
+### A subject, seen again and again, through changing seasons, light, and conditions.
+### Inspired by this, I photograph Toronto by returning to what remains constant.
+### The (link: https://en.wikipedia.org/wiki/CN_Tower text: CN Tower.)
+
+(image: john-wilander-e02tiydyhy4-unsplash.jpg caption: Wonderful Image class:img-wrap)
+
+----
+
+Uuid: IOknRGWZSKGlbaSV
