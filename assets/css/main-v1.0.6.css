@@ -11,7 +11,7 @@ section {
 }
 
 @font-face {
-    font-family: 'Graphik Web Regular';
+    font-family: 'Inter';
     src: url('../fonts/Inter.ttf') format('truetype');
 }
 
@@ -36,6 +36,7 @@ section {
     --text-mid: #555555;
     --text-mid-low: #666666;
     --text-low: #777777;
+    --text-low-light: #999999;
     --line: #d0d0d0;
     --f-size: 1rem;
     --f-weight: 400;
@@ -123,6 +124,7 @@ Screen  Old     New
         --text-mid-low: #a2a2a2;
         --text-mid: #a4a6a8;
         --text-low: #737476;
+        --text-low-light: #404040;
         --line: #454545;
     }
 }
@@ -132,11 +134,21 @@ Screen  Old     New
     color: var(--background);
 }
 
+/* Hide scrollbar for all browsers */
+html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+}
+
 body {
     line-height: 1.8;
     display: flex;
     justify-content: center;
-    font-family: "Graphik Web Regular", "Iowan Old Style", "Iowan", "Charter", "Palatino Linotype", "Palatino", "Book Antiqua", "Palatino LT STD", Times New Roman, serif;
+    font-family: "Inter", "Iowan Old Style", "Iowan", "Charter", "Palatino Linotype", "Palatino", "Book Antiqua", "Palatino LT STD", Times New Roman, serif;
     font-size: var(--f-size);
     font-weight: var(--f-weight);
     color: var(--text);
@@ -145,6 +157,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     font-kerning: normal;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 strong {
@@ -444,6 +458,13 @@ figure {
     margin-bottom: 30px;
 }
 
+.img-wrap-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .img-wrap h1 {
     font-family: 'Instrument Serif', serif;
     font-style: italic;
@@ -469,6 +490,23 @@ figure {
     padding: 0 5vw;
 }
 
+.img-wrap h4 {
+    font-family: 'Instrument Serif', serif;
+    display: none;
+    line-height: 1.4;
+    font-style: normal;
+    font-size: calc(var(--f-size) * 0.8);
+    color: var(--text-low-light);
+    margin: 0;
+    max-width: 90vw;
+    text-align: center;
+    padding: 0 5vw;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .img-wrap img {
     max-width: 90vw;
     max-height: 50vh;
@@ -480,11 +518,10 @@ figure {
 
 figcaption {
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
     max-width: 85%;
     text-align: center;
     color: var(--text-low);
-    font-size: calc(var(--f-size) * var(--scale-s));
+    font-size: calc(var(--f-size) * var(--scale-sm));
     padding: 15px 1rem 0;
     margin: 0 auto;
 }
@@ -503,5 +540,11 @@ figcaption {
 
     .img-wrap h3 {
         font-size: calc(var(--f-size) * var(--scale-2xl));
+    }
+
+    .img-wrap h4 {
+        display: block;
+        font-weight: normal;
+        font-size: calc(var(--f-size) * var(--scale-sm));
     }
 }

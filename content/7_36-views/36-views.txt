@@ -13,8 +13,9 @@ Text:
 ### A subject, seen again and again, through changing seasons, light, and conditions.
 ### Inspired by this, I photograph Toronto by returning to what remains constant.
 ### The (link: https://en.wikipedia.org/wiki/CN_Tower text: CN Tower).
+#### Press &#8595;
 
-(image: john-wilander-e02tiydyhy4-unsplash.jpg caption: Wonderful Image class:img-wrap)
+(image: john-wilander-e02tiydyhy4-unsplash.jpg caption: Placeholder Image by John Wilander class:img-wrap)
 
 ----
 
