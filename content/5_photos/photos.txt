@@ -7,6 +7,10 @@ Description: The world through my (mini) lens
 ----
 
 Text:
+# From the Camera Roll
+### [Sony A6000](https://en.wikipedia.org/wiki/Sony_%CE%B16000) &nbsp; &middot; &nbsp; [25mm F2](https://www.ttartisan.com/?aps-c-lenses/78.html) &nbsp; &middot; &nbsp; iPhone 15 &nbsp; &middot; &nbsp; [Zerocam](https://zerocam.app/)
+#### Swipe &#8595; <!-- mobile -->
+#### Press &#8595; <!-- desktop -->
 
 (image: cape-spear.jpg caption: 012 | Far east | July 2024                     class:img-wrap)
 (image: hollow-coves.jpeg caption: 011 | Hollow Coves | June 2024              class:img-wrap)
