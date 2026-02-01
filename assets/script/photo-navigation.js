@@ -14,7 +14,7 @@
             const targetPosition = sections[index].offsetTop;
             const startPosition = window.scrollY;
             const distance = targetPosition - startPosition;
-            const duration = 2000; // 300ms for snappy transition
+            const duration = 200; // 200ms for snappy transition
             const startTime = performance.now();
             
             function animate(currentTime) {

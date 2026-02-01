@@ -8,18 +8,18 @@ Description: The world through my (mini) lens
 
 Text:
 
-(image: cape-spear.jpg caption: Far east, Jul 2024                     class:img-wrap)
-(image: hollow-coves.jpeg caption: Hollow Coves, Jun 2024              class:img-wrap)
-(image: stare-contest.jpeg caption: Stare Contest, May 2024            class:img-wrap)
-(image: spring.jpg caption: Spring, April 2024                         class:img-wrap)
-(image: img_3178.jpeg  caption: Sunflowers and Sunshine, Aug 2023      class:img-wrap)
-(image: img_3449.jpeg  caption: Oh the places you’ll go, Jul 2023      class:img-wrap)
-(image: img_2616.jpeg  caption: Nature's Symphony, Jun 2023            class: img-wrap)
-(image: img_6570.jpg   caption: You and me, Jul 2022                   class:img-wrap)
-(image: img_6365.jpg   caption: We all have our favourites, May 2022   class: img-wrap)
-(image: img_2373.jpg   caption: The Summit at 12,500ft, Dec 2021       class:img-wrap)
-(image: img_2431.jpeg  caption: Living in the Himalayas, Dec 2021      class: img-wrap)
-(image: img_1116.jpg   caption: World's Smallest Desert, Nov 2022      class: img-wrap)
+(image: cape-spear.jpg caption: 012 | Far east | July 2024                     class:img-wrap)
+(image: hollow-coves.jpeg caption: 011 | Hollow Coves | June 2024              class:img-wrap)
+(image: stare-contest.jpeg caption: 010 | Stare Contest | May 2024            class:img-wrap)
+(image: spring.jpg caption: 009 | Spring | April 2024                         class:img-wrap)
+(image: img_3178.jpeg  caption: 008 | Sunflowers and Sunshine | August 2023      class:img-wrap)
+(image: img_3449.jpeg  caption: 007 | Oh the places you’ll go | July 2023      class:img-wrap)
+(image: img_2616.jpeg  caption: 006 | Nature's Symphony | June 2023            class: img-wrap)
+(image: img_6570.jpg   caption: 005 | You and me | July 2022                   class:img-wrap)
+(image: img_6365.jpg   caption: 004 | We all have our favourites | May 2022   class: img-wrap)
+(image: img_2373.jpg   caption: 003 | The Summit at 12,500ft | December 2021       class:img-wrap)
+(image: img_2431.jpeg  caption: 002 | Living in the Himalayas | December 2021      class: img-wrap)
+(image: img_1116.jpg   caption: 001 | World's Smallest Desert | November 2022      class: img-wrap)
 
 ----
 

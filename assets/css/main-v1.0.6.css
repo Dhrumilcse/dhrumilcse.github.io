@@ -36,7 +36,7 @@ section {
     --text-mid: #555555;
     --text-mid-low: #666666;
     --text-low: #777777;
-    --text-low-light: #999999;
+    --text-low-light: #909090;
     --line: #d0d0d0;
     --f-size: 1rem;
     --f-weight: 400;
@@ -124,7 +124,7 @@ Screen  Old     New
         --text-mid-low: #a2a2a2;
         --text-mid: #a4a6a8;
         --text-low: #737476;
-        --text-low-light: #404040;
+        --text-low-light: #4d4d4d;
         --line: #454545;
     }
 }
@@ -438,12 +438,17 @@ blockquote p {
 /* PHOTOS */
 .grid-container {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 figure {
     margin: 0;
     padding: 0;
-    display: flex;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .img-wrap {
@@ -456,6 +461,12 @@ figure {
     align-items: center;
     flex-direction: column;
     margin-bottom: 30px;
+}
+
+.img-caption-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .img-wrap-content {
@@ -507,6 +518,15 @@ figure {
     transform: translateX(-50%);
 }
 
+.img-wrap h4.mobile-only {
+    font-weight: normal;
+    display: block;
+}
+
+.img-wrap h4.desktop-only {
+    display: none;
+}
+
 .img-wrap img {
     max-width: 90vw;
     max-height: 50vh;
@@ -518,12 +538,29 @@ figure {
 
 figcaption {
     font-family: 'Instrument Serif', serif;
-    max-width: 85%;
-    text-align: center;
-    color: var(--text-low);
+    width: 100%;
+    color: var(--text-low-light);
     font-size: calc(var(--f-size) * var(--scale-sm));
-    padding: 15px 1rem 0;
-    margin: 0 auto;
+    padding: 15px 0 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: baseline;
+}
+
+figcaption .caption-number {
+    text-align: left;
+    justify-self: start;
+}
+
+figcaption .caption-title {
+    text-align: center;
+    justify-self: center;
+}
+
+figcaption .caption-date {
+    text-align: right;
+    justify-self: end;
 }
 
 @media (min-width: 700px) {
@@ -542,7 +579,11 @@ figcaption {
         font-size: calc(var(--f-size) * var(--scale-2xl));
     }
 
-    .img-wrap h4 {
+    .img-wrap h4.mobile-only {
+        display: none;
+    }
+    
+    .img-wrap h4.desktop-only {
         display: block;
         font-weight: normal;
         font-size: calc(var(--f-size) * var(--scale-sm));
