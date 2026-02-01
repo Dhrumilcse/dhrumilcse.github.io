@@ -247,18 +247,18 @@ ul {
 
 .home-icon-circle {
     /* Or #FF2E00 - more dark */
-    background-color: #e0734a;
-    width: 18px;
-    height: 10px;
-    border-radius: calc(infinity * 1px);
+    background-color: #FF2E00;
+    width: 20px;
+    height: 9px;
+    border-radius: 4px;
     margin-top: 2rem;
     margin-bottom: 3rem;
 }
 
 @media (min-width: 1000px) {
     .home-icon-circle {
-        margin-top: 2rem;
-        margin-bottom: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 3.5rem;
     }
 }
 
@@ -360,6 +360,8 @@ h3 {
     color: var(--text-low);
     font-style: italic;
     font-size: calc(var(--f-size) * var(--scale-s));
+    display: block;
+    grid-template-columns: unset;
 }
 
 @media (min-width: 700px) {
