@@ -18,7 +18,7 @@ You'll also notice my site looks fairly similar to his, and you're right. I boug
 
 Anyways, I'm visiting my parents and this is the street that I remember vividly from my childhood.
 
-(image: shared13.jpg class:th-image caption: 25 years and it's still the same)
+(image: shared13.jpg class:th-image)
 
 ----
 

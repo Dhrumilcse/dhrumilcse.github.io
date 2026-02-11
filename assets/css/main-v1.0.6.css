@@ -54,7 +54,8 @@ section {
     --max-width: 560px;
     --line-height-th-content: 1.735;
     --photo-height: 100vh;
-    --radius-sm: 2px
+    --radius-sm: 2px;
+    --radius-md: 4px;
 }
 
 /* 
@@ -341,6 +342,10 @@ h3 {
     align-items: center;
     margin-top: 3rem;
     margin-bottom: 2.5rem;
+    background-color: #f9f9f9;
+    padding: 4rem;
+    border-radius: var(--radius-md);
+    box-sizing: border-box;
 }
 
 .th-image img {
@@ -350,7 +355,7 @@ h3 {
     width: auto;
     display: block;
     object-fit: contain;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
 }
 
 .th-image figcaption {
