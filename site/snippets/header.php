@@ -12,7 +12,8 @@
     $defaultImage = 'og-square.png';
     $ogImage = $page->isHomePage() ? $defaultImage : (file_exists('assets/image/' . $customImage) ? $customImage : $defaultImage);
     $pageUrl = url($page->url());
-    $imageUrl = url('assets/image/' . $ogImage);
+    $imagePath = 'assets/image/' . $ogImage;
+    $imageUrl = url($imagePath) . '?v=' . filemtime($imagePath);
     ?>
 
     <!-- Cache Control -->
