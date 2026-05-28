@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="<?= url('assets/image/favicon.ico') ?>">
     <meta name="viewport" content="width=device-width, initial-scale=0.95">
-    <?= css('assets/css/main-v1.0.6.css?v=' . asset('assets/css/main-v1.0.6.css')->modified()) ?>
+    <?= css('assets/css/main-v1.0.7.css?v=' . asset('assets/css/main-v1.0.7.css')->modified()) ?>
 
     <!-- Meta -->
     <?php
