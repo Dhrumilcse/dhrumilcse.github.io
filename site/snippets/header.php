@@ -10,7 +10,7 @@
     <?php
     $customImage = $page->title() . '.png';
     $defaultImage = 'og-light.png';
-    $twitterImage = 'og-summary.png';
+    $twitterImage = 'og-square.png';
     $ogImage = $page->isHomePage() ? $defaultImage : (file_exists('assets/image/' . $customImage) ? $customImage : $defaultImage);
     $pageUrl = url($page->url());
     ?>
