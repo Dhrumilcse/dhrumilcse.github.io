@@ -1,0 +1,170 @@
+Title: Beyond Tokenmaxxing
+
+----
+
+Description: 
+
+----
+
+Date: 2026-05-28
+
+----
+
+Text:
+
+Over the last year, AI adoption has accelerated. Engineers are using it for all sorts of things – from writing code to managing their digital lives. Managers and leaders are spinning up dashboards and internal tools to track how well adopted their teams are. It feels like an entire generation of dormant builders suddenly came back to life.
+
+And like every technological shift before it, enthusiasm quickly found a metric. Usage in token and $ spend became visible and visibility became competition. Before long, people weren’t just building, they were measuring how much AI they consumed while doing it.
+
+*“Meta also introduced internal dashboards to track employees’ consumption of “tokens,” a unit of A.I. use that is roughly equivalent to four characters of text, four people said. Some said the dashboards were a pressure tactic to encourage competition with colleagues. That led some employees to make so many A.I. agents that others had to introduce agents to find agents, and agents to rate agents, two people said<sup>1</sup>”*
+
+*“At Anthropic, a single user of the company’s A.I. coding system, Claude Code, racked up a bill of more than $150,000 in a month<sup>2</sup>”*
+
+While consumption became measurable, impact on the other hand did not. A developer running an agent loop and a developer debugging production incident could look identical on the spend dashboard. They spent the same tokens but the value they got out is completely different.
+
+Token (or $ spend) data was made available to answer the question “how much did we use,” it was built for billing, not management or leaderboards and some companies<sup>3</sup> are already starting to realize this disconnect. According to Aishwarya Sankar of Entillegence AI<sup>4</sup>, 82% of the token spent never makes it to the product and over 44% is spent on bug fixes, potentially created by AI agents on the loose. 
+
+The challenge is no longer getting engineers to use AI, it is understanding whether the usage is creating meaningful leverage.
+
+
+### Measuring Acceleration
+
+Instead of tracking consumption, we should track how much developer work was meaningfully accelerated. One approach may be to weigh developer activities based on two variables: how frequently they occur and how much time they save. 
+
+The most valuable workflows are often not the most expensive ones, but the ones that repeatedly remove friction from high-frequency tasks.
+
+By weighing activities that represent real developer work (code written, context gathered, investigations) and dividing by cost, we get a signal that reflects purposeful spend rather than raw consumption. It doesn’t penalize high usage. A developer doing meaningful work at scale should score well. What it penalizes is waste: agent loops, redundant scans, and *tokenmaxxing* that appears productive on a dashboard but quietly is not.
+
+<table>
+  <thead>
+    <tr>
+      <th>Activity</th>
+      <th>Frequency</th>
+      <th>Time Saved</th>
+      <th>Weight</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lines added</td>
+      <td>Extremely high</td>
+      <td>Extremely high</td>
+      <td>1</td>
+      <td>GitHub</td>
+    </tr>
+    <tr>
+      <td>Lines removed</td>
+      <td>High</td>
+      <td>Extremely high</td>
+      <td>0.875</td>
+      <td>GitHub</td>
+    </tr>
+    <tr>
+      <td>Refactoring<br />(updates, deletes)</td>
+      <td>Medium</td>
+      <td>Extremely high</td>
+      <td>0.75</td>
+      <td>GitHub</td>
+    </tr>
+    <tr>
+      <td>Skill invocations</td>
+      <td>Extremely high</td>
+      <td>Extremely high</td>
+      <td>1</td>
+      <td>Vendor</td>
+    </tr>
+    <tr>
+      <td>MCP invocations</td>
+      <td>High</td>
+      <td>Extremely high</td>
+      <td>0.875</td>
+      <td>Vendor</td>
+    </tr>
+  </tbody>
+</table>
+
+Where:
+Weight = ( Frequency + Time Saved ) / 2
+Using: Low = 0.25, Medium = 0.5, High = 0.75, Extremely high = 1
+
+#### Lines added, removed, and refactor
+This is one of the most common use cases. Something developers do almost every day. In my opinion, lines removed are almost as valuable as lines added but most metrics ignore it entirely. Deletions and renames feel cheap when delegated to Claude because a single instruction can touch dozens of files. But the decision to delete still requires judgment, and the value of that judgment is high.
+
+#### Skills and MCP invocations
+Skills are scoped, reusable, context-aware workflows that make repeated developer tasks faster, more consistent, and less manual. MCPs (or connectors) are especially valuable because they gather and reconstruct context across systems. In many engineering workflows, context retrieval may be harder and more time-consuming than content generation itself. Some vendors5 already expose parts of this data through enterprise analytics APIs, which can serve as a useful starting point for measuring acceleration in developer productivity.
+
+#### Formula
+With the above, I came to the following, simple, formula to calculate a score to understand the acceleration in developer productivity, and ultimately impact.
+
+*Acceleration Score = Σ(activity × weight) / cost ($)*
+
+Let’s look at the example:
+
+<table>
+  <thead>
+    <tr>
+      <th>Activity</th>
+      <th>Developer A</th>
+      <th>Developer B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lines added</td>
+      <td>2000</td>
+      <td>1500</td>
+    </tr>
+    <tr>
+      <td>Lines removed</td>
+      <td>50</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <td>Refactoring<br />(updates, deletes)</td>
+      <td>20</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Skill invocations</td>
+      <td>2</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>MCP invocations</td>
+      <td>4</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>$500</td>
+      <td>$200</td>
+    </tr>
+    <tr>
+      <td>Score</td>
+      <td>4.13</td>
+      <td>7.95</td>
+    </tr>
+  </tbody>
+</table>
+
+Both developers produced substantial output, but Developer B achieved significantly higher leverage relative to spend. The difference was not raw activity, but how effectively AI was used to reduce friction, reuse workflows, and gather context
+
+### A step further
+
+Tools like (link: https://traces.com text: traces.com) could become an observability layer for human-agent collaboration. Sessions, attachments, tool invocations, and execution traces help reconstruct how work actually happened rather than simply measuring how many tokens were consumed.
+
+Better visibility shifts the optimization target from activity to effectiveness. The goal here is not to create a perfect productivity metric. Those likely do not exist. The goal is to avoid mistaking consumption for effectiveness.
+
+
+### References
+
+1. (link: https://www.nytimes.com/2026/05/08/technology/meta-ai-employees-miserable.html text: Meta’s Embrace of A.I. Is Making Its Employees Miserable) 
+2. (link: https://www.nytimes.com/2026/03/20/technology/tokenmaxxing-ai-agents.html#commentsContainer text: More! More! More! Tech Workers Max Out Their A.I. Use)
+3. (link: https://www.businessinsider.com/uber-coo-andrew-macdonald-ai-token-spending-harder-justify-2026-5 text: Uber's COO says it's getting harder to justify the money spent on AI tokenmaxxing )
+4. (link: https://x.com/Aiswarya_Sankar/status/2059298259949232484?s=20 text: Aishwarya Sankar on X )
+5. (link: https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide text: Claude Enterprise Analytics API Reference Guide)
+
+----
+
+Uuid: I7auP6mHK9RlYx8M
