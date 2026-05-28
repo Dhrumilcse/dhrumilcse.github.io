@@ -9,7 +9,7 @@
                 <?= $page->date()->toDate('F j, Y') ?>
             </p>
         </div>
-        <h3 class="th-content">
+        <div class="th-content">
         <?= $page->text()->kirbytext() ?>
-    </h3>
+    </div>
     </div> 
