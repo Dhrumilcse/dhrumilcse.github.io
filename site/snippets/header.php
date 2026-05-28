@@ -9,10 +9,10 @@
     <!-- Meta -->
     <?php
     $customImage = $page->title() . '.png';
-    $defaultImage = 'og-light.png';
-    $twitterImage = 'og-square.png';
+    $defaultImage = 'og-square.png';
     $ogImage = $page->isHomePage() ? $defaultImage : (file_exists('assets/image/' . $customImage) ? $customImage : $defaultImage);
     $pageUrl = url($page->url());
+    $imageUrl = url('assets/image/' . $ogImage);
     ?>
 
     <!-- Cache Control -->
@@ -31,14 +31,16 @@
     <meta property="og:url" content="<?= $pageUrl ?>" />
     <meta property="og:title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title(); ?>" />
     <meta property="og:description" content="<?= $page->description() ?>" />
-    <meta property="og:image" content="<?= url('assets/image/' . $ogImage) ?>" />
+    <meta property="og:image" content="<?= $imageUrl ?>" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="800" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:url" content="<?= $pageUrl ?>" />
     <meta name="twitter:title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title(); ?>" />
     <meta name="twitter:description" content="<?= $page->description() ?>" />
-    <meta name="twitter:image" content="<?= url('assets/image/' . $twitterImage) ?>" />
+    <meta name="twitter:image" content="<?= $imageUrl ?>" />
 
 </head>
 <body class="page-<?= $page->intendedTemplate() ?>">
