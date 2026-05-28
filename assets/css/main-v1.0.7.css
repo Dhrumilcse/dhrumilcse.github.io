@@ -373,7 +373,7 @@ h3 {
 .th-sub-title {
     font-size: calc(var(--f-size) * var(--scale-sm));
     color: var(--text-low);
-    margin-top: -32px;
+    margin-top: -28px;
 }
 
 .th-content {
