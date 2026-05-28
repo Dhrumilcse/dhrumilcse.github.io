@@ -33,7 +33,7 @@
     <meta property="og:site_name" content"Dhrumil Patel">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:card" content="summary" />
     <meta property="twitter:url" content="https://dhrumil.ca/" />
     <meta property="twitter:title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title(); ?>" />
     <meta property="twitter:description" content="<?= $page->description() ?>" />
