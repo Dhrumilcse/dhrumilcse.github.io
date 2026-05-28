@@ -28,13 +28,13 @@ The challenge is no longer getting engineers to use AI, it is understanding whet
 
 <hr class="separator">
 
-### Measuring Acceleration
+### Measuring Leverage
 
-Instead of tracking consumption, we should track how much developer work was meaningfully accelerated. One approach may be to weigh developer activities based on two variables: how frequently they occur and how much time they save. 
+Instead of tracking consumption, we should track how much leverage it creates for developer work. One approach may be to weigh developer activities based on two variables: how frequently they occur and how much time or friction they remove. 
 
 The most valuable workflows are often not the most expensive ones, but the ones that repeatedly remove friction from high-frequency tasks.
 
-By weighing activities that represent real developer work (code written, context gathered, investigations) and dividing by cost, we get a signal that reflects purposeful spend rather than raw consumption. It doesn’t penalize high usage. A developer doing meaningful work at scale should score well. What it penalizes is waste: agent loops, redundant scans, and *tokenmaxxing* that appears productive on a dashboard but quietly is not.
+By weighing activities that represent real developer work (code changes, context gathered, investigations) and dividing by cost, we get a signal that reflects purposeful spend rather than raw consumption. It doesn’t penalize high usage. A developer doing meaningful work at scale should score well. What it penalizes is waste: agent loops, redundant scans, and *tokenmaxxing* that appears productive on a dashboard but quietly is not.
 
 <table>
   <thead>
@@ -89,16 +89,16 @@ Where:
 Weight = ( Frequency + Time Saved ) / 2
 Using: Low = 0.25, Medium = 0.5, High = 0.75, Extremely high = 1
 
-#### Lines added, removed, and refactor
+#### Merged code changes
 This is one of the most common use cases. Something developers do almost every day. In my opinion, lines removed are almost as valuable as lines added but most metrics ignore it entirely. Deletions and renames feel cheap when delegated to Claude because a single instruction can touch dozens of files. But the decision to delete still requires judgment, and the value of that judgment is high.
 
 #### Skills and MCP invocations
-Skills are scoped, reusable, context-aware workflows that make repeated developer tasks faster, more consistent, and less manual. MCPs (or connectors) are especially valuable because they gather and reconstruct context across systems. In many engineering workflows, context retrieval may be harder and more time-consuming than content generation itself. Some vendors5 already expose parts of this data through enterprise analytics APIs, which can serve as a useful starting point for measuring acceleration in developer productivity.
+Skills are scoped, reusable, context-aware workflows that make repeated developer tasks faster, more consistent, and less manual. MCPs (or connectors) are especially valuable because they gather and reconstruct context across systems. In many engineering workflows, context retrieval may be harder and more time-consuming than content generation itself. Some vendors5 already expose parts of this data through enterprise analytics APIs, which can serve as a useful starting point for measuring leverage in developer workflows.
 
 #### Formula
-With the above, I came to the following, simple, formula to calculate a score to understand the acceleration in developer productivity, and ultimately impact.
+Using the above signals, we can construct a simple heuristic for estimating leverage relative to cost.
 
-*Acceleration Score = Σ(activity × weight) / cost ($)*
+*Leverage Score = Σ(activity × weight) / cost ($)*
 
 Let’s look at the example:
 
@@ -149,7 +149,7 @@ Let’s look at the example:
   </tbody>
 </table>
 
-Both developers produced substantial output, but Developer B achieved significantly higher leverage relative to spend. The difference was not raw activity, but how effectively AI was used to reduce friction, reuse workflows, and gather context
+Both developers produced similar output, but Developer B achieved significantly higher leverage relative to spend. The difference was not raw activity, but how effectively AI was used to reduce friction, reuse workflows, and gather context.
 
 <hr class="separator">
 
