@@ -29,11 +29,17 @@ section {
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Iowan';
+    src: url('../fonts/Iowan-regular.otf') format('opentype');
+}
+
 
 :root {
     --background: #ffffff;
     --background-image: #f9f9f9;
     --text: #111111;
+    --text-high-mid: #333333;
     --text-mid: #555555;
     --text-mid-low: #666666;
     --text-low: #777777;
@@ -52,8 +58,8 @@ section {
     --scale-3xl: 2.5;
     --scale-4xl: 3;
     --scale-5xl: 3.5;
-    --max-width: 560px;
-    --line-height-th-content: 1.735;
+    --max-width: 580px;
+    --line-height-th-content: 1.8;
     --photo-height: 100vh;
     --radius-sm: 2px;
     --radius-md: 4px;
@@ -62,60 +68,85 @@ section {
 /* 
 Screen  Old     New
 
-250     510     560
-500     510     590
-1000    545     610
-1500    565     640
-2000    635     710
-2250    685     760
+250     560     580
+500     590     620
+1000    610     640
+1500    640     670
+2000    710     740
+2250    760     790
 
-250     1.025   1.05
-500     1.05    1.075
-1000    1.075   1.115
-1500    1.115   1.15
-2000    1.25    1.25
-2250    1.35    1.35
+250     1.06    1.1
+500     1.075   1.12
+1000    1.115   1.16
+1500    1.15    1.2
+2000    1.25    1.3
+2250    1.35    1.4
  */
 
 @media (min-width: 250px) {
     :root {
-        --f-size: 1.06rem;
+        --f-size: 1.1rem;
         --max-width: 560px;
     }
 }
 
 @media (min-width: 500px) {
     :root {
-        --f-size: 1.075rem;
-        --max-width: 590px;
+        --f-size: 1.12rem;
+        --max-width: 620px;
     }
 }
 
 @media (min-width: 1000px) {
     :root {
-        --f-size: 1.115rem;
-        --max-width: 610px;
+        --f-size: 1.18rem;
+        --max-width: 640px;
     }
 }
 
 @media (min-width: 1500px) {
     :root {
-        --f-size: 1.15rem; 
-        --max-width: 640px;
+        --f-size: 1.2rem; 
+        --max-width: 670px;
     }
 }
 
 @media (min-width: 2000px) {
     :root {
-        --f-size: 1.25rem;
-        --max-width: 710px;
+        --f-size: 1.3rem;
+        --max-width: 740px;
     }
 }
 
 @media (min-width: 2250px) {
     :root {
+        --f-size: 1.4rem;
+        --max-width: 790px;
+    }
+}
+
+/* Thoughts index — custom --f-size scale */
+@media (min-width: 1000px) {
+    body.page-thoughts {
+        --f-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1500px) {
+    body.page-thoughts {
+        --f-size: 1.275rem;
+    }
+}
+
+@media (min-width: 2000px) {
+    body.page-thoughts {
         --f-size: 1.35rem;
-        --max-width: 760px;
+    }
+}
+
+@media (min-width: 2250px) {
+    body.page-thoughts {
+        --f-size: 1.425rem;
     }
 }
 
@@ -124,6 +155,7 @@ Screen  Old     New
         --background: #111;
         --background-image: #151515;
         --text: #C7C8CA;
+        --text-high-mid: #b8b9bb;
         --text-mid-low: #a2a2a2;
         --text-mid: #a4a6a8;
         --text-low: #737476;
@@ -166,6 +198,12 @@ body {
 
 strong {
     font-weight: var(--f-weight-semi-bold);
+}
+
+/* Iowan for thoughts (listing + individual posts) */
+body.page-thoughts,
+body.page-post {
+    font-family: 'Iowan', 'Iowan Old Style', 'Charter', 'Palatino Linotype', 'Palatino', 'Book Antiqua', Georgia, 'Times New Roman', serif;
 }
 
 p {
@@ -324,9 +362,9 @@ h3 {
 }
 
 .th-heading {
-    font-size: calc(var(--f-size) * var(--scale-l));
-    padding-top: 7.5%;
-    padding-bottom: 1rem;
+    font-size: calc(var(--f-size) * 1.4);
+    padding-top: 4%;
+    padding-bottom: 0.5rem;
     color: var(--text);
 }
 
@@ -340,7 +378,43 @@ h3 {
     font-size: var(--f-size);
     padding-top: 2%;
     line-height: var(--line-height-th-content);
+    letter-spacing: 0.0125em;
+    color: var(--text-high-mid);
+}
+
+.th-content table {
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: calc(var(--f-size) * var(--scale-sm));
+    line-height: 1.5;
+}
+
+@media (max-width: 999px) {
+    .th-content table {
+        display: block;
+        overflow-x: auto;
+        max-width: 100%;
+        margin: 2rem 0;
+    }
+}
+
+.th-content th,
+.th-content td {
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid var(--line);
+    white-space: nowrap;
+}
+
+.th-content thead th {
     color: var(--text);
+    font-weight: 600;
+    text-align: center;
+}
+
+.th-content tbody td:nth-child(4) {
+    text-align: center;
 }
 
 .th-image {
@@ -422,6 +496,7 @@ h3 {
     padding-top: 25px;
     /* text-indent: 1.5em; */
 }
+
 
 
 /* FOOTER */

@@ -41,4 +41,4 @@
 
     <title>Home</title>
 </head>
-<body>
+<body class="page-<?= $page->intendedTemplate() ?>">
