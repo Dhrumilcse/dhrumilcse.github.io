@@ -86,7 +86,7 @@ By weighing activities that represent real developer work (code changes, context
 </table>
 
 Where:
-Weight = ( Frequency + Time Saved ) / 2
+*Weight = ( Frequency + Time Saved ) / 2*
 Using: Low = 0.25, Medium = 0.5, High = 0.75, Extremely high = 1
 
 #### Merged code changes
@@ -95,7 +95,7 @@ This is one of the most common use cases. Something developers do almost every d
 #### Skills and MCP invocations
 Skills are scoped, reusable, context-aware workflows that make repeated developer tasks faster, more consistent, and less manual. MCPs (or connectors) are especially valuable because they gather and reconstruct context across systems. In many engineering workflows, context retrieval may be harder and more time-consuming than content generation itself. Some vendors5 already expose parts of this data through enterprise analytics APIs, which can serve as a useful starting point for measuring leverage in developer workflows.
 
-#### Formula
+#### A simple heuristic
 Using the above signals, we can construct a simple heuristic for estimating leverage relative to cost.
 
 *Leverage Score = Σ(activity × weight) / cost ($)*
