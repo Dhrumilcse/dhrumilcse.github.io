@@ -26,6 +26,7 @@ Token (or $ spend) data was made available to answer the question “how much di
 
 The challenge is no longer getting engineers to use AI, it is understanding whether the usage is creating meaningful leverage.
 
+<hr class="separator">
 
 ### Measuring Acceleration
 
@@ -101,7 +102,7 @@ With the above, I came to the following, simple, formula to calculate a score to
 
 Let’s look at the example:
 
-<table>
+<table class="center-data">
   <thead>
     <tr>
       <th>Activity</th>
@@ -150,12 +151,15 @@ Let’s look at the example:
 
 Both developers produced substantial output, but Developer B achieved significantly higher leverage relative to spend. The difference was not raw activity, but how effectively AI was used to reduce friction, reuse workflows, and gather context
 
+<hr class="separator">
+
 ### A step further
 
 Tools like (link: https://traces.com text: traces.com) could become an observability layer for human-agent collaboration. Sessions, attachments, tool invocations, and execution traces help reconstruct how work actually happened rather than simply measuring how many tokens were consumed.
 
 Better visibility shifts the optimization target from activity to effectiveness. The goal here is not to create a perfect productivity metric. Those likely do not exist. The goal is to avoid mistaking consumption for effectiveness.
 
+<hr class="separator">
 
 ### References
 

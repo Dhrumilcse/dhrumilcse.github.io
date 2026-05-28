@@ -45,6 +45,7 @@ section {
     --text-low: #777777;
     --text-low-light: #909090;
     --line: #d0d0d0;
+    --line-light: #e8e8e8;
     --f-size: 1rem;
     --f-weight: 400;
     --f-weight-semi-bold: 500;
@@ -161,6 +162,7 @@ Screen  Old     New
         --text-low: #737476;
         --text-low-light: #4d4d4d;
         --line: #454545;
+        --line-light: #2a2a2a;
     }
 }
 
@@ -415,6 +417,19 @@ h3 {
 
 .th-content tbody td:nth-child(4) {
     text-align: center;
+}
+
+.th-content table.center-data tbody td:not(:first-child) {
+    text-align: center;
+}
+
+/* Section separator */
+.separator {
+    border: none;
+    border-top: 1px solid var(--line-light);
+    width: 35%;
+    margin: 3.5rem auto;
+    height: 0;
 }
 
 .th-image {
