@@ -20,7 +20,7 @@
 
 
     <!-- Primary Meta Tags -->
-    <title><?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title() . ' &mdash; Dhrumil'; ?></title>
+    <title><?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title(); ?></title>
     <meta name="title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title(); ?>" />
     <meta name="description" content="<?= $page->description() ?>" />
 
@@ -30,15 +30,14 @@
     <meta property="og:title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title(); ?>" />
     <meta property="og:description" content="<?= $page->description() ?>" />
     <meta property="og:image" content="<?= url('assets/image/' . $ogImage) ?>" />
-    <meta property="og:site_name" content"Dhrumil Patel">
+    <meta property="og:site_name" content="Dhrumil Patel">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:url" content="https://dhrumil.ca/" />
-    <meta property="twitter:title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title(); ?>" />
-    <meta property="twitter:description" content="<?= $page->description() ?>" />
-    <meta property="twitter:image" content="<?= url('assets/image/' . $ogImage) ?>" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://dhrumil.ca/" />
+    <meta name="twitter:title" content="<?= $page->isHomePage() ? 'Dhrumil Patel' : $page->title(); ?>" />
+    <meta name="twitter:description" content="<?= $page->description() ?>" />
+    <meta name="twitter:image" content="<?= url('assets/image/' . $ogImage) ?>" />
 
-    <title>Home</title>
 </head>
 <body class="page-<?= $page->intendedTemplate() ?>">
