@@ -1,0 +1,20 @@
+Title: Topics
+
+----
+
+Description: I read so I can write better
+
+----
+
+Text:
+
+Topics I've read
+
+<br> Health Data (June 2026 - Now)
+(link: https://en.wikipedia.org/wiki/QRS_complex text: QRS Complex)
+(link: https://my.clevelandclinic.org/health/body/23266-parasympathetic-nervous-system-psns text: Parasympathetic Nervous System)
+(link: https://www.whoop.com/ca/en/thelocker/heart-rate-variability-hrv/ text: Heart Rate Variability (HRV))
+
+----
+
+Uuid: ZbImnal2j43ACLd2

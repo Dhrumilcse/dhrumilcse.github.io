@@ -1,0 +1,54 @@
+Title: What's next
+
+----
+
+Description: 
+
+----
+
+Date: 2026-05-29
+
+----
+
+Text:
+
+Building software is not the same anymore. I vividly remember learning Python and all the nitty gritty of setting up a backend server, going to code forums to find answers. I couldn't even dream of creating frontend applications but it was fun times.
+
+Then came the copy-pasting code era. I remember I created my first frontend application when chatgpt came out. It was basically a crawler with UI for all pets available for adoption in Toronto area. Even with the assist, I felt a sense of accomplishment at the end of the day.
+
+Today, however, the story is different. What started as agent-supported coding is now completely autonomous. I don't look at the code anymore. I still know what pieces sit where, but the code itself, the LLMs write it better than I could ever.
+
+Which begs the question, what's next? After thinking about this for a while, I came to the following two conclusions 1) I either want to work on the fundamentals that enables these LLMs to write better code or 2) I want to work on tools that enables millions to use the LLMs and build better software.
+
+### Where I sit today
+
+Below is a list of companies I think falls under one of those two buckets.
+
+<hr class="separator">
+
+### Bucket 1
+#### Turbopuffer
+#### Tailscale
+
+<hr class="separator">
+
+### Bucket 2
+#### Conductor
+#### Superwhisper
+#### Traces
+
+<hr class="separator">
+
+### Caveats
+While I agree building software is going to change, there are some aspects of human life that’ll always require a certain things: Finance, health, a dream of entrepreneurship, etc.
+
+I would also consider working at companies that does something in these areas.
+
+#### Shopify
+#### Wealthsimple
+#### Mercury
+#### Polar or Stripe
+
+----
+
+Uuid: xUGQfUXz4WeyYQXu

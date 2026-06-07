@@ -12,9 +12,15 @@ Date: 2026-05-28
 
 Text:
 
-Over the last year, AI adoption has accelerated. Engineers are using it for all sorts of things – from writing code to managing their digital lives. Managers and leaders are spinning up dashboards and internal tools to track how well adopted their teams are. It feels like an entire generation of dormant builders suddenly came back to life.
+tl;dr Token usage data was made available for billing and not for measuring developer output. We should create a simple heuristic by weighing frequent developer activities (merged code changes, skill & mcp invocations, etc), which can reflect purposeful spend rather than raw consumption. 
 
-And like every technological shift before it, enthusiasm quickly found a metric. Usage in token and $ spend became visible and visibility became competition. Before long, people weren’t just building, they were measuring how much AI they consumed while doing it.
+Example = Σ(activity × weight) / cost ($)
+
+<hr class="separator">
+
+Over the last year, AI adoption has accelerated. Engineers are using it for all sorts of things – from writing code to managing their digital lives. It feels like an entire generation of dormant builders suddenly came back to life.
+
+And like every technological shift before it, enthusiasm quickly found a metric. Managers and leaders began building dashboards and internal tools to measure how thoroughly their teams had adopted it. Usage in token and $ spend became visible, and visibility became competition. Before long, people weren't just building; they were measuring how much AI they consumed while doing it.
 
 *“Meta also introduced internal dashboards to track employees’ consumption of “tokens,” a unit of A.I. use that is roughly equivalent to four characters of text, four people said. Some said the dashboards were a pressure tactic to encourage competition with colleagues. That led some employees to make so many A.I. agents that others had to introduce agents to find agents, and agents to rate agents, two people said<sup>1</sup>”*
 
@@ -93,7 +99,7 @@ Using: Low = 0.25, Medium = 0.5, High = 0.75, Extremely high = 1
 This is one of the most common use cases. Something developers do almost every day. In my opinion, lines removed are almost as valuable as lines added but most metrics ignore it entirely. Deletions and renames feel cheap when delegated to Claude because a single instruction can touch dozens of files. But the decision to delete still requires judgment, and the value of that judgment is high.
 
 #### Skills and MCP invocations
-Skills are scoped, reusable, context-aware workflows that make repeated developer tasks faster, more consistent, and less manual. MCPs (or connectors) are especially valuable because they gather and reconstruct context across systems. In many engineering workflows, context retrieval may be harder and more time-consuming than content generation itself. Some vendors5 already expose parts of this data through enterprise analytics APIs, which can serve as a useful starting point for measuring leverage in developer workflows.
+Skills are scoped, reusable, context-aware workflows that make repeated developer tasks faster, more consistent, and less manual. MCPs (or connectors) are especially valuable because they gather and reconstruct context across systems. In many engineering workflows, context retrieval may be harder and more time-consuming than content generation itself. Some vendors<sup>5</sup> already expose parts of this data through analytics APIs, which can serve as a useful starting point for measuring leverage in developer workflows.
 
 #### A simple heuristic
 Using the above signals, we can construct a simple heuristic for estimating leverage relative to cost.
@@ -155,7 +161,7 @@ Both developers produced similar output, but Developer B achieved significantly 
 
 ### A step further
 
-Tools like (link: https://traces.com text: traces.com) could become an observability layer for human-agent collaboration. Sessions, attachments, tool invocations, and execution traces help reconstruct how work actually happened rather than simply measuring how many tokens were consumed.
+Tools like (link: https://traces.com text: Traces) could become an observability layer for human-agent collaboration. Sessions, attachments, tool invocations, and execution traces help reconstruct how work actually happened rather than simply measuring how many tokens were consumed.
 
 Better visibility shifts the optimization target from activity to effectiveness. The goal here is not to create a perfect productivity metric. Those likely do not exist. The goal is to avoid mistaking consumption for effectiveness.
 
