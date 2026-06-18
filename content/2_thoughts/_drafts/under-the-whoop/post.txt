@@ -1,4 +1,4 @@
-Title: Under the (w)hoop
+Title: Under the Whoop
 
 ----
 
@@ -20,10 +20,11 @@ After playing with Goose for a while, I decided to build my own app. Classic, ri
 
 ### Pre reads
 A lot of investigatory work has been already done by curious minds. I definitely recommend reading (or at least glancing) these before continuing.
-1. (link: https://github.com/b-nnett/goose/tree/main/docs/goose-swift-mvp/evidence/health-2026-06-01 text: Goose (GitHub))
-2. (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#a-quick-bluetooth-primer text: Cracking the WHOOP 5.0 over Bluetooth)
-    2.1 (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#a-quick-bluetooth-primer text: Bluetooth Primer )
-    2.2 (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#what-you-get-for-free text: What you get for free (public data))
+1. (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#a-quick-bluetooth-primer text: Cracking the WHOOP 5.0 over Bluetooth)
+    1.1 (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#a-quick-bluetooth-primer text: Bluetooth Primer )
+    1.2 (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#what-you-get-for-free text: What you get for free (public data))
+2. (link: https://github.com/b-nnett/goose/tree/main/docs/goose-swift-mvp/evidence/health-2026-06-01 text: Goose (GitHub))
+3. (link: https://github.com/NoopApp/noop text: Noop App) (GitHub)
 
 <hr class="separator">
 
@@ -33,15 +34,23 @@ Alright, so let's get building. Jude describes this in great detail (link: https
 (image: img_7377.png caption: Thanks, Matthew class:th-image)
 
 #### Bytes bytes bytes
-Before getting into the WHOOP specifics, a quick mental model: every wireless conversation between two devices is, at the lowest level, just a stream of bytes — numbers from 0 to 255, one after another, with nothing in the raw stream to tell you what any of them mean. The meaning lives in an agreement called a protocol: byte 0 is the packet type, bytes 1-2 are the length, byte 8 is the heart rate, and so on. "Decoding" data from a device is mostly the work of figuring out which position holds what — sometimes from a spec the manufacturer publishes, sometimes from someone who reverse-engineered it before you. Once you have that map, the bytes stop being numbers and start being information.
+Before getting into the Whoop specifics, a quick mental model: every wireless conversation between two devices is, at the lowest level, just a stream of bytes: numbers from 0 to 255, one after another, with nothing in the raw stream to tell you what any of them mean. The meaning lives in an agreement called a protocol: byte 0 is the packet type, bytes 1-2 are the length, byte 8 is the heart rate, and so on. 
+
+Decoding data from a device is mostly the work of figuring out which position holds what: sometimes from a spec the manufacturer publishes, sometimes from someone who reverse-engineered it before you. Once you have that map, the bytes stop being numbers and start being information.
 
 ### 2. Public Data
-WHOOP, like a lot of fitness wearables, speaks two BLE dialects at once. The first one is standard: a heart rate characteristic at the well-known UUID 0x2A37, battery at 0x180F, device info at 0x180A. If all you want is a number on a screen, you're done in an afternoon — scan, connect, subscribe to notifications, and iOS basically hands you the BPM. That's the first thing I shipped: a "Connected: 72 bpm" readout that worked without knowing anything WHOOP-specific. It looks great in a demo, but it's also the only thing the public side of the radio is willing to tell you.
-
+Whoop, like a lot of fitness wearables, speaks two BLE dialects at once. The first one is standard: a heart rate characteristic at the well-known `UUID 0x2A37`, battery at `0x180F`, device info at `0x180A`. If all you want is a number on a screen, you can set it up in an afternoon. Scan, connect, subscribe to notifications, and it basically hands you the BPM. 
 (image: img_7408.png caption: Getting public data is ezpz class:th-image)
 
 ### 3. Custom Data
-Everything interesting — HRV, raw motion, the actual stream of data the WHOOP app uses — sits behind a custom service with a UUID that starts with fd4b…. The strap doesn't just let you read it. You have to authenticate first, which in practice means writing a hardcoded 16-byte "hello" frame to a specific characteristic and waiting for the strap to reply on a separate notification channel. Until that happens, every other read is silent. The frame itself I lifted from Goose, an open-source project that reverse-engineered the protocol — it's a Start-of-Frame byte, a 2-byte length, a CRC-16 over the header, and a CRC-32 over the payload, all baked in as a hex literal because every byte has to be exactly right.
+Everything interesting sits behind a custom service. In order to read that, we first have to authenticate, then start sending commands that roughly translates to *"hey, start sending me live/historical data.."* and once you receive it, you have to decode and store for persistance.
+
+#### Commands
+
+
+#### Decoding
+
+Everything interesting sits behind a custom service. The strap doesn't just let you read it like public data, you have to authenticate first, which in practice means writing a hardcoded 16-byte "hello" frame to a specific characteristic and waiting for the strap to reply on a separate notification channel. Until that happens, every other read is silent. The frame itself I lifted from Goose, an open-source project that reverse-engineered the protocol — it's a Start-of-Frame byte, a 2-byte length, a CRC-16 over the header, and a CRC-32 over the payload, all baked in as a hex literal because every byte has to be exactly right.
 
 Once authenticated, I send a second command — command ID 3 with payload [1], which roughly translates to "turn on the realtime heart-rate stream." A second later, 32-byte packets start arriving at about one per second. Each one is a little envelope: 8 bytes of WHOOP header (same SOF / length / CRC dance), a 20-byte payload, then a 4-byte checksum trailer. The first byte of the payload tells you what kind of packet it is; from there it was mostly stare-at-the-hex work. I lined up every byte against what the public HR characteristic was reporting at the same moment, and byte 8 of the payload matched exactly — every frame, every reading. So that's the heart rate. The next byte turned out to be an RR-interval count, and the bytes after it were individual beat-to-beat times measured in 1/1024-second units. Not glamorous protocol work — just diffing two streams of the same thing until the numbers line up.
 
@@ -49,22 +58,21 @@ Once authenticated, I send a second command — command ID 3 with payload [1], w
 Now that we collected and decoded raw data, this is where things get interesting.
 
 #### Heart Rate Variability (HRV)
+
 Human heart doesn't beat at a constant rate, even at rest. There's a tiny (and healthy) jitter between beats, which is governed by your autonomic nervous system, mostly by the (link: https://my.clevelandclinic.org/health/body/23266-parasympathetic-nervous-system-psns text: parasympathetic) (rest and digest) branch. Other way to look at it is: more jitter = more parasympathetic tone = more recovered / less stressed. 
 
-The data we need to calculate HRV is RR intervals. The time between successive R-peaks of the ECG (or between successive beats from an optical sensor). 
-
-There are several HRV metrics (SDNN, pNN50, LF/HF, etc.). The one everyone uses for short-window live readings is Root Mean Square of Successive Differences (RMSSD), including Whoop.
-
-> WHOOP calculates HRV using RMSSD, the root mean square of successive differences between heartbeats ((link: https://www.whoop.com/ca/en/thelocker/heart-rate-variability-hrv/ text: link))
+The data we need to calculate HRV is R-R intervals, which is the time between successive R-peaks of the ECG (or between successive beats from an optical sensor). There are several ways we can calculate HRV (SDNN, pNN50, LF/HF, etc.), however, the one almost all trackers use is Root Mean Square of Successive Differences (RMSSD), including Whoop<sup>1</sup>.
 
 *RMSSD = sqrt( sum(diff^2) / count(diff) )*
 
 In plain English:
-1. Take each consecutive RR interval difference.
-2. Square each difference.
-3. Add all squared differences together.
-4. Divide by the number of differences.
-5. Take the square root.
+1. Take each consecutive RR interval difference
+2. Square each difference
+3. Add all squared differences together
+4. Divide by the number of differences
+5. Take the square root
+
+##### Reading the data
 
 We're already capturing these: every K2 frame carries 0-2 of them in payload[10..] as u16 LE values in 1/1024-second units, and we already convert them to milliseconds in parseV5RealtimeData.
 
@@ -79,7 +87,7 @@ We're already capturing these: every K2 frame carries 0-2 of them in payload[10.
 
 Window = 60 seconds. That's the sweet spot between responsive (small window = noisy) and steady (large window = laggy). Outlier rejection on the interval itself (not the diff) — a single missed beat would otherwise produce a huge fake jitter.
 
-#### Handling edge cases
+##### Handling edge cases
 
 RMSSD is can be too high. It can climbed from ~50 ms → 280+ ms. A healthy resting RMSSD lives in 20-100 ms. The cause is beat-detection artifacts — look at this run:
 
@@ -90,6 +98,33 @@ seq=42 RR=[ 534]   ← double-count: strap caught the missed one as a separate b
 Those two consecutive intervals produce a successive difference of ~800 ms. Squared → 640,000. One ectopic beat blows up the whole window's RMSSD.
 
 The standard fix is to reject successive-difference values above a physiological threshold (~200 ms) before squaring. Almost every real HRV pipeline does this — Garmin, Polar, the academic literature. It costs nothing and instantly drops the value into the credible range. Our current code filters the RR intervals themselves (300-2000 ms), which lets ectopic doubles like 534 ms and 1331 ms through; what we need is to also filter the deltas.
+
+<hr class="separator">
+
+#### Sleep
+
+#### Resting Heart Rate
+
+Unweighted
+RHR = weighted_mean(HR samples in sleep window
+where; weight  = 1/HR
+
+Weighted
+RHR = weighted_mean(HR samples in sleep window)
+weight = high during detected SWS, low during awake/light
+
+
+### References
+1. (link: https://www.whoop.com/ca/en/thelocker/heart-rate-variability-hrv/ text: Heart Rate Variability Explained (Whoop))
+
+<hr class="separator">
+
+### Readings
+
+1. (link: https://en.wikipedia.org/wiki/Units_of_information text: Unit of Information)
+2. (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#a-quick-bluetooth-primer text: Bluetooth Primer )
+3. (link: https://www.whoop.com/ca/en/thelocker/heart-rate-variability-hrv/ text: Heart Rate Variability Explained)
+4. (link: https://learn.sparkfun.com/tutorials/accelerometer-basics/all text: Accelerometer Basics)
 
 ----
 

@@ -14,21 +14,35 @@ Text:
 
 Building software is not the same anymore. I vividly remember learning Python and all the nitty gritty of setting up a backend server, going to code forums to find answers. I couldn't even dream of creating frontend applications but it was fun times.
 
-Then came the copy-pasting code era. I remember I created my first frontend application when chatgpt came out. It was basically a crawler with UI for all pets available for adoption in Toronto area. Even with the assist, I felt a sense of accomplishment at the end of the day.
+Then came the copy-pasting code era. I remember I created my first frontend application when ChatGPT came out. It was basically a crawler with UI for all pets available for adoption in Toronto area. Even with the assist, I felt a sense of accomplishment at the end of the day.
 
 Today, however, the story is different. What started as agent-supported coding is now completely autonomous. I don't look at the code anymore. I still know what pieces sit where, but the code itself, the LLMs write it better than I could ever.
 
-Which begs the question, what's next? After thinking about this for a while, I came to the following two conclusions 1) I either want to work on the fundamentals that enables these LLMs to write better code or 2) I want to work on tools that enables millions to use the LLMs and build better software.
+Which begs the question, what's next? After thinking about this for a while, I came to the following three conclusions 
+1. I either want to work on the fundamentals that enables these LLMs to write better code or 
+2. I want to work on tools that enables millions to use the LLMs and build better software or
+3. Infra that allows humans and LLMs to deliver at scale
 
-### Where I sit today
-
-Below is a list of companies I think falls under one of those two buckets.
+But before diving into product and people building around those two spectrums, I need to understand what I am good at and what leverage I can bring to the table. 
 
 <hr class="separator">
 
+### Where I sit today
+
+#### Data + Integrations
+I've been working as a data + software engineer over the last 6 years. My strength dealing with large scale data and the integrations between platforms, tools, or teams. However, going forward, I'd love to work on full-stack products. While integrations and reliability is a core requirement, it gets monotonous after a while.
+
+#### Taste
+
+#### Ownership
+Also, lines between roles is only going to get blurry from here on. Front-end engineers expected to know backend and vice-versa. 
+
+<hr class="separator">
+
+### What people are building
+
 ### Bucket 1
-#### Turbopuffer
-#### Tailscale
+#### Cohere
 
 <hr class="separator">
 
@@ -39,15 +53,19 @@ Below is a list of companies I think falls under one of those two buckets.
 
 <hr class="separator">
 
-### Caveats
-While I agree building software is going to change, there are some aspects of human life that’ll always require a certain things: Finance, health, a dream of entrepreneurship, etc.
+### Bucket 3
+#### Turbopuffer
+#### Tailscale
 
-I would also consider working at companies that does something in these areas.
+<hr class="separator">
+
+### Caveats
+While I agree building software is going to change, there are some aspects of human life that’ll always require a certain things: Finance, health, a dream of entrepreneurship, etc. I would also consider working at companies that does something in these areas.
 
 #### Shopify
 #### Wealthsimple
 #### Mercury
-#### Polar or Stripe
+#### Stripe (or Polar)
 
 ----
 
