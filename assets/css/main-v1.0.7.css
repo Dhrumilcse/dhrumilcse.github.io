@@ -509,6 +509,16 @@ h3 {
     font-size: calc(var(--f-size) * 0.5);
 }
 
+.th-image-pair-caption {
+    grid-column: 1 / -1;
+    margin: -0.25rem 0 0;
+    text-align: center;
+    color: var(--text-low);
+    font-style: italic;
+    line-height: 1.2;
+    font-size: calc(var(--f-size) * 0.5);
+}
+
 @media (min-width: 700px) {
     .th-image {
         width: calc(100% + 20%);
@@ -532,6 +542,11 @@ h3 {
 
     .th-image-pair figcaption {
         padding-top: 15px;
+        font-size: calc(var(--f-size) * var(--scale-s));
+    }
+
+    .th-image-pair-caption {
+        margin-top: 0;
         font-size: calc(var(--f-size) * var(--scale-s));
     }
 }
