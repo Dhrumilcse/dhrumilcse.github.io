@@ -511,7 +511,8 @@ h3 {
 
 .th-image-pair-caption {
     grid-column: 1 / -1;
-    margin: -0.25rem 0 0;
+    margin: 0;
+    padding-top: 0.25rem;
     text-align: center;
     color: var(--text-low);
     font-style: italic;
@@ -546,7 +547,7 @@ h3 {
     }
 
     .th-image-pair-caption {
-        margin-top: 0;
+        padding-top: 12.5px;
         font-size: calc(var(--f-size) * var(--scale-s));
     }
 }
