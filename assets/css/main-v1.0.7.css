@@ -48,7 +48,7 @@ section {
     --line-light: #e8e8e8;
     --f-size: 1rem;
     --f-weight: 400;
-    --f-weight-semi-bold: 500;
+    --f-weight-semi-bold: bold;
     --scale-s: 0.8;
     --scale-sm: 0.94;
     --scale-m: 0.96;
@@ -383,6 +383,14 @@ h4 {
     line-height: var(--line-height-th-content);
     letter-spacing: 0.0125em;
     color: var(--text-high-mid);
+}
+
+.th-content code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: calc(var(--f-size) * var(--scale-s));
+    background: var(--line-light);
+    border-radius: var(--radius-md);
+    padding: 0.1rem 0.3rem;
 }
 
 .th-content table {
