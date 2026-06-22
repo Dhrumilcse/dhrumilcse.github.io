@@ -393,6 +393,24 @@ h4 {
     padding: 0.1rem 0.3rem;
 }
 
+.th-content pre {
+    background: var(--line-light);
+    border-radius: var(--radius-md);
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    padding: 1rem;
+}
+
+.th-content pre code {
+    background: transparent;
+    border-radius: 0;
+    display: block;
+    letter-spacing: normal;
+    line-height: 1.6;
+    padding: 0;
+    white-space: pre;
+}
+
 .th-content table {
     border-collapse: collapse;
     margin: 2rem 0;
