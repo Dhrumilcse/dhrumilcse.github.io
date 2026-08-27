@@ -635,7 +635,19 @@ blockquote {
     margin-left: 0;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border-left: 1.5px solid var(--text-mid);
+    position: relative;
+}
+
+blockquote::before {
+    content: "";
+    position: absolute;
+    top: 0.3rem;
+    bottom: 0.3rem;
+    left: 0;
+    width: 3px;
+    border-radius: 999px;
+    background-color: var(--text-low);
+    opacity: 0.5;
 }
 
 blockquote p {
