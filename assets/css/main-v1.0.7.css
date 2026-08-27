@@ -641,8 +641,8 @@ blockquote {
 blockquote::before {
     content: "";
     position: absolute;
-    top: 0.3rem;
-    bottom: 0.3rem;
+    top: 0.2rem;
+    bottom: 0.2rem;
     left: 0;
     width: 3px;
     border-radius: 999px;
