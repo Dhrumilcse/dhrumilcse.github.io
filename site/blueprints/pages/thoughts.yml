@@ -15,8 +15,15 @@ columns:
   sidebar:
     width: 2/3
     sections:
-      pages:
+      published:
         type: pages
+        label: Published
+        status: listed
+        template: post
+      drafts:
+        type: pages
+        label: Drafts
+        status: draft
         template: post
       files:
         type: files
