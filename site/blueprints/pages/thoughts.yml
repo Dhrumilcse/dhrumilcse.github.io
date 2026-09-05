@@ -26,6 +26,12 @@ columns:
         status: draft
         template: post
         sortBy: date desc
+      unlisted:
+        type: pages
+        label: Unlisted
+        status: unlisted
+        template: post
+        sortBy: date desc
   - width: 1/1
     sections:
       files:
