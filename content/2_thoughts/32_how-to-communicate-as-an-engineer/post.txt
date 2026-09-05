@@ -1,0 +1,118 @@
+Title: How I communicate as an engineer
+
+----
+
+Description: 
+
+----
+
+Date: 2026-08-26
+
+----
+
+Text:
+
+I've been told a few times in my short career (by managers and peers) that I am good at communication, especially in writing. I take pride in that because it's a skill I've worked on deliberately. So, I thought I'd share some of the things I do that have worked well for me.
+
+If you work in engineering at a company that lives in Slack, you probably spend a surprising amount of your day reading and parsing messages. That adds up, and by the end of the day, it can be exhausting. Good communication minimizes the reader's cognitive load. Most of what follows comes back to that idea.
+
+<hr class="separator">
+
+### Know who you're talking to
+This may sound simple, but I see engineers miss it all the time. Most of us work with several different types of people, and the right level of detail changes depending on who you're talking to. Take a simple project update. Suppose someone asks:
+> Hey, how are we doing with project X?
+
+Here’s how I’d answer depending on who asks.
+
+#### Director or senior leadership
+> Going well. We're on track to finish on time, and there are no major risks right now.
+
+#### Engineering manager or PM
+> We're on track for the planned launch. The backend work is done, and we're finishing the frontend integration this week. The only thing we're watching is dependency X, but it isn't blocking us yet.
+
+#### Engineer working on or adjacent to the project
+> Backend changes are merged and deployed to staging. I'm working through the frontend integration now; the main issue is that endpoint X doesn't return Y yet, so I'm adding that before wiring up the final flow. I should have a testable version up tomorrow.
+
+Senior leadership usually wants status and timeline. Engineering managers and PMs need the remaining work, dependencies, and risks. Engineers need the technical details, blockers, and next steps. The underlying information doesn't change, but the level of abstraction does.
+
+<hr class="separator">
+
+### Reduce the back-and-forth
+As much as I like concise messages, good communication is not necessarily short. Sometimes adding one sentence of context saves five follow-ups later. When you're making a request, give enough context that the recipient can act without doing archaeology.
+
+Instead of:
+
+> Can you take a look at this?
+
+Try:
+
+> Can you take a look at this error from the checkout service? I think it started after yesterday's deploy, but I haven't been able to isolate the cause.
+
+The second message is longer, but it saves the recipient from having to ask what they're looking at, why it matters, and what you've already tried. The same goes when you receive an ambiguous request: clarify it right away.
+
+<hr class="separator">
+
+### Lead with the important part
+Don't make someone read through your thought process before getting to the thing they care about.
+
+Instead of:
+
+> We spoke with Team X yesterday. Their API migration is taking a little longer than expected, and we're still waiting for endpoint Y before we can finish the integration. Because of that, I don't think we'll be able to launch on Friday.
+
+Try:
+
+> We're likely going to miss Friday's launch. Team X's API migration is taking longer than expected, which is blocking the final integration.
+
+The important information comes first. The context is still there, but the reader doesn't have to dig for it.
+
+<hr class="separator">
+
+### Don't offload thinking
+I really like the idea of not becoming a (link: https://sfisms.org/meat-proxy text: meat proxy) for AI, which I first came across in (link: https://gruhn.me/blog/2026-08-03/ text: this post). If someone asks you a question and you simply pass along whatever an AI gives you, you're making them do the work of figuring out what actually matters.
+
+Use AI to help you think, research, or draft, but do the synthesis yourself. Understand the output, pull out the useful parts, and communicate them clearly. The final message should be easier to consume than the raw material you started with.
+
+<hr class="separator">
+
+### Communicate before you're asked
+If you're working on a project that others are tracking, I highly recommend sending regular updates. Weekly or every couple of weeks is usually enough.
+
+A simple update with what changed, what's next, and any risks or blockers keeps everyone on the same page (see how to format the message below). More importantly, it means fewer people have to ask how the project is going.
+
+<hr class="separator">
+
+### Formatting
+Formatting is really about removing friction for the reader. Make your message easy to scan, understand, and act on.
+
+#### Links
+Default to descriptive hyperlinks instead of pasting raw URLs. Compare:
+> Do you mind reviewing (link: https://github.com/project/pulls/4582 text: this PR) when you have a moment? It tweaks button X on page Y. 
+
+with:
+
+> Hey, can you review this PR? (link: https://github.com/project/pulls/4582 text: https://github.com/project/pulls/4582/files/)
+
+The first tells you what the link is, why you're being asked to open it, and what to look for before you even click.
+
+#### Bullets
+If you're communicating multiple updates, don't bury them in a paragraph. Make them easy to scan.
+
+- Project 1
+    - On track to be completed by X
+- Project 2
+    - Blocked on dependency X
+    - Launch will likely move by a week if not resolved by Friday
+- Project 3
+    - Complete and rolled out to 100% of users
+
+Someone should be able to skim the update and understand where everything stands in a few seconds.
+
+<hr class="separator">
+
+None of these are hard rules. The common thread is reducing unnecessary friction in how you work with others. Good communication isn't about writing more or writing less; it's about making things easier for everyone involved.
+
+And over time, this compounds. People trust you to keep them informed, bring you into more important conversations, and feel comfortable giving you larger problems to own. Especially as you become more senior, your ability to communicate clearly becomes just as important as your ability to do the technical work.
+
+----
+
+Uuid: uxGQPLhkkf2pIsgb

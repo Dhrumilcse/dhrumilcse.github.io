@@ -1,0 +1,37 @@
+Title: Freewrite iOS
+
+----
+
+Description: 
+
+----
+
+Date: 2026-06-18
+
+----
+
+Text:
+
+A while ago, (link: https://farza.com/ text: Farza) created and shared (link: https://freewrite.io/ text: Freewrite macOS) app for distraction free writing in your flow state. I, a sucker for minimal apps, immediately downloaded the app and loved using it. 
+
+After a while, I realized most of my thoughts or reflection occur when I am away from the screen. While walking, camping with friends, driving, running an errand, you name it. While it's not always possible to carry macbook, the phone is always there. Thus, I decided to write (or ask claude to write) the iOS version of the app.
+
+<div class="th-image th-image-pair">
+(image: img_7751-portrait.png)
+(image: img_7760-portrait.png)
+</div>
+
+I just submitted it for review on App Store, in the meantime, if you want to try it out, (link: https://x.com/dhrumil text: reach out on X) for the Testflight invite. Or, you can build the app yourself through the (link: https://github.com/Dhrumilcse/freewrite text: source code). 
+
+All data stays local and no analytics is collected. 
+
+Oh, and it also comes in dark mode :)
+
+<div class="th-image th-image-pair">
+(image: img_7761-portrait.png)
+(image: img_7762-portrait.png)
+</div>
+
+----
+
+Uuid: sMuyiBaIrRziflUN

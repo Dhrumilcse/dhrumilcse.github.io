@@ -67,6 +67,12 @@ While I agree building software is going to change, there are some aspects of hu
 #### Mercury
 #### Stripe (or Polar)
 
+### Extras
+- Linear
+- Retro
+- Astral (now OpenAI)
+- Netflix
+
 ----
 
 Uuid: xUGQfUXz4WeyYQXu

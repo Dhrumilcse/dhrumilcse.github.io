@@ -13,6 +13,8 @@ Text:
 #### Swipe &#8595; <!-- mobile -->
 #### Press &#8595; <!-- desktop -->
 
+(image: dsc05760.jpg           caption: 014 | Monet's Water Lilies | August 2026             class:img-wrap)
+(image: dsc05726-1.jpg       caption: 014 | Stair-ing in the void | August 2026           class:img-wrap)
 (image: 3-2.jpg                      caption: 013 | A Snowy Evening | January 2026                 class:img-wrap)
 (image: cape-spear.jpg        caption: 012 | Far east | July 2024                                         class:img-wrap)
 (image: hollow-coves.jpeg   caption: 011 | Hollow Coves | June 2024                              class:img-wrap)

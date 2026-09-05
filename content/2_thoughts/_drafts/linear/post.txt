@@ -1,0 +1,36 @@
+Title: Linear
+
+----
+
+Description: 
+
+----
+
+Date: 2026-08-26
+
+----
+
+Text:
+
+### Message to Mufeez
+
+
+### Common
+Tell us why you want to join our team!
+
+### Intermediate
+
+Tell us about something you built that no one asked you to. What was it, why did you build it, and what did you learn?
+
+
+###  Senior 
+
+Tell us about a complex project you led end-to-end. What problem were you solving, what decisions and tradeoffs did you make, and what was the impact?
+
+1. Events
+2. Catalogs
+3.
+
+----
+
+Uuid: nY2S33YPREKLp37B

@@ -1,0 +1,38 @@
+Title: Freewrite Privacy Policy
+
+----
+
+Description: 
+
+----
+
+Date: 2026-06-19
+
+----
+
+Text:
+
+#### What personal information do we process?
+We do not store or process any personal information. All data is stored locally on your device.
+
+#### Do we process any sensitive personal information?
+Some of the information may be considered "special" or "sensitive" in certain jurisdictions, for example your racial or ethnic origins, sexual orientation, and religious beliefs. We do not process sensitive personal information.
+
+#### Do we collect any information from third parties?
+We do not collect any information from third parties.
+
+#### How do we process your information?
+We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so. Learn more about how we process your information.
+
+#### In what situations and with which parties do we share personal information?
+We do not share personal information with 3rd parties.
+
+#### What are your rights?
+Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information. Learn more about your privacy rights.
+
+#### How do you exercise your rights?
+The easiest way to exercise your rights is by contacting us. We will consider and act upon any request in accordance with applicable data protection laws.
+
+----
+
+Uuid: htN2xEXkrATqyNSJ

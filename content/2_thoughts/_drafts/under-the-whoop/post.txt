@@ -18,113 +18,127 @@ After playing with Goose for a while, I decided to build my own app. Classic, ri
 
 <hr class="separator">
 
-### Pre reads
-A lot of investigatory work has been already done by curious minds. I definitely recommend reading (or at least glancing) these before continuing.
-1. (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#a-quick-bluetooth-primer text: Cracking the WHOOP 5.0 over Bluetooth)
-    1.1 (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#a-quick-bluetooth-primer text: Bluetooth Primer )
-    1.2 (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#what-you-get-for-free text: What you get for free (public data))
-2. (link: https://github.com/b-nnett/goose/tree/main/docs/goose-swift-mvp/evidence/health-2026-06-01 text: Goose (GitHub))
-3. (link: https://github.com/NoopApp/noop text: Noop App) (GitHub)
+### Connection
+Jude describes this in great detail (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#a-quick-bluetooth-primer text: here) but in a nutshell, we need to "bond" (basically, pairing or authentication) Whoop and mobile device. After struggling for a while, I learned that you need to pair through the official Whoop app for it to actually "bond" and have the conenction persist at the system level. Whoop understandably has a proprietary command to do that. 
+
+(image: img_7377-portrait.png caption: Thanks, Matthew class:th-image)
+
+Now that we have system level connection, next step is to have our app persist the connection (or re-connection) in all scenarios; foreground, background, and app closure. 
+
+#### Foreground
+Foreground is comparatively easy. In our app, we use Apple’s (link: https://developer.apple.com/documentation/corebluetooth/cbcentralmanager text: CoreBluetooth framework) to create a Bluetooth central session. Our “scan” functionality then looks for Whoop-specific UUIDs and connects to the matching device. After a successful connection, the app remembers connected devices' UUID, so on the next app open, it can reconnect automatically without requiring another manual scan.
+
+#### Background
+When you put an app in the background, iOS usually suspends the process. It remains in memory but gets little to no CPU time. Luckily, iOS (link: https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothBackgroundProcessingForIOSApps/PerformingTasksWhileYourAppIsInTheBackground.html text: allows) apps to declare certain background capabilities, including BLE-related work through bluetooth-central. 
+
+With that enabled, CoreBluetooth can keep managing relevant BLE activity on the app’s behalf and briefly wake the app when Bluetooth events occur, such as a subscribed characteristic receiving new data, a connection succeeding, or a connection dropping. However, now that creates another problem of battery drainage on both phone and Whoop. We'll discuss it more later.
+
+#### App Closure and Re-open
+When app is closed, app looses connection to Whoop and auth is lost. On reconnection, as noted earlier, it automatically recognizes device, connects, and authenticates.
 
 <hr class="separator">
 
-### 1. Connecting Whoop
-Alright, so let's get building. Jude describes this in great detail (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#a-quick-bluetooth-primer text: here) but in a nutshell, we need to "bond" (basically pair) Whoop and mobile device. After struggling for a while, I learned that you need to pair through the official whoop app for it to actually "bond" and have it persist at the system level.
+### Getting data
+There are couple things we need to understand first before asking Whoop for the data it collects. I am going to explain each of those briefly, feel free to skip if you are familiar with the concept.
 
-(image: img_7377.png caption: Thanks, Matthew class:th-image)
+#### Bits, bytes, and Nibbles
+When working with Bluetooth data, it helps to remember that devices ultimately send bytes. A byte is eight bits and can represent values from 0 to 255. Engineers often display bytes in hexadecimal because it is more compact than binary, with every two hex digits representing exactly one byte. For example, the value 75 can be written as:
+- `75` in decimal
+- `0x4B` in hexadecimal or
+- `01001011` in binary 
 
-#### Bytes bytes bytes
-Before getting into the Whoop specifics, a quick mental model: every wireless conversation between two devices is, at the lowest level, just a stream of bytes: numbers from 0 to 255, one after another, with nothing in the raw stream to tell you what any of them mean. The meaning lives in an agreement called a protocol: byte 0 is the packet type, bytes 1-2 are the length, byte 8 is the heart rate, and so on. 
+The underlying value is identical. The key distinction is that some hexadecimal values represent measurements, such as heart rate or battery percentage, while others are simply identifiers. For example, `0x4B` may decode to a heart rate of 75 bpm, whereas `0x2A37` is a Bluetooth characteristic UUID that serves as a name rather than a value. 
 
-Decoding data from a device is mostly the work of figuring out which position holds what: sometimes from a spec the manufacturer publishes, sometimes from someone who reverse-engineered it before you. Once you have that map, the bytes stop being numbers and start being information.
+Once you understand that BLE packets are just sequences of bytes and that hexadecimal is simply a human-friendly way to view them, decoding sensor data becomes much less intimidating.
 
-### 2. Public Data
-Whoop, like a lot of fitness wearables, speaks two BLE dialects at once. The first one is standard: a heart rate characteristic at the well-known `UUID 0x2A37`, battery at `0x180F`, device info at `0x180A`. If all you want is a number on a screen, you can set it up in an afternoon. Scan, connect, subscribe to notifications, and it basically hands you the BPM. 
-(image: img_7408.png caption: Getting public data is ezpz class:th-image)
+#### The Envelope
+Now that we understand what data may look like, let's understand how to format our request to the device it in a way it is expecting, so in turn, it can give us the data we need.
 
-### 3. Custom Data
-Everything interesting sits behind a custom service. In order to read that, we first have to authenticate, then start sending commands that roughly translates to *"hey, start sending me live/historical data.."* and once you receive it, you have to decode and store for persistance.
+Every BLE packet (a request or a response) is wrapped in an envelope. Think of it as a shipping box around the actual message. The envelope contains metadata such as packet length, version, sequence numbers, and checksums that help the receiver understand and validate the data.
 
-#### Commands
+The envelope matters because devices expect it to be constructed exactly right. If the length, checksum, or control fields are incorrect, the packet may be rejected or ignored entirely.
+
+Jude explains this really well in (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#the-envelope text: his article), so I am not going to re-invent the wheel, but this is what an envelope looks like:
+
+(image: whoop5-frame-1.jpg class:th-image caption: The Envelope ([Source](https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#the-envelope)))
+
+For example, a WHOOP packet might look something like:
+
+```
+┌──────────────────────────── Outer Envelope ─────────────────────────────┐
+[0xAA][0x01][0x0012][0x0001][CRC16][0x23][0x05][0x91][0x01][payload][CRC32]
+                                   └──────── Inner Message ────────┘
+```
+
+where:
+
+```
+[0xAA]       Start of frame ("a packet begins here")
+[0x01]       Protocol version
+[0x0012]     Packet length
+[0x0001]     Control field
+[crc16]      Header integrity check (of bytes 0..6)
+
+[0x23]       Message type (COMMAND)
+[0x05]       Sequence number
+[0x91]       Command (GET_HELLO)
+[0x01]       Command-specific flag
+[payload]    Actual command data
+
+[crc32]      Payload integrity check (of inner)
+```
+
+You can think of the first five fields as the shipping label and packaging instructions, while the inner fields contain the actual message. In this example, the message is `GET_HELLO`, packet number `5`, with any additional data stored in the payload. Before Whoop processes the command, it first verifies the length and checksums to ensure the packet arrived intact.
 
 
-#### Decoding
+#### The commands
 
-Everything interesting sits behind a custom service. The strap doesn't just let you read it like public data, you have to authenticate first, which in practice means writing a hardcoded 16-byte "hello" frame to a specific characteristic and waiting for the strap to reply on a separate notification channel. Until that happens, every other read is silent. The frame itself I lifted from Goose, an open-source project that reverse-engineered the protocol — it's a Start-of-Frame byte, a 2-byte length, a CRC-16 over the header, and a CRC-32 over the payload, all baked in as a hex literal because every byte has to be exactly right.
-
-Once authenticated, I send a second command — command ID 3 with payload [1], which roughly translates to "turn on the realtime heart-rate stream." A second later, 32-byte packets start arriving at about one per second. Each one is a little envelope: 8 bytes of WHOOP header (same SOF / length / CRC dance), a 20-byte payload, then a 4-byte checksum trailer. The first byte of the payload tells you what kind of packet it is; from there it was mostly stare-at-the-hex work. I lined up every byte against what the public HR characteristic was reporting at the same moment, and byte 8 of the payload matched exactly — every frame, every reading. So that's the heart rate. The next byte turned out to be an RR-interval count, and the bytes after it were individual beat-to-beat times measured in 1/1024-second units. Not glamorous protocol work — just diffing two streams of the same thing until the numbers line up.
-
-### 4. Calculations
-Now that we collected and decoded raw data, this is where things get interesting.
-
-#### Heart Rate Variability (HRV)
-
-Human heart doesn't beat at a constant rate, even at rest. There's a tiny (and healthy) jitter between beats, which is governed by your autonomic nervous system, mostly by the (link: https://my.clevelandclinic.org/health/body/23266-parasympathetic-nervous-system-psns text: parasympathetic) (rest and digest) branch. Other way to look at it is: more jitter = more parasympathetic tone = more recovered / less stressed. 
-
-The data we need to calculate HRV is R-R intervals, which is the time between successive R-peaks of the ECG (or between successive beats from an optical sensor). There are several ways we can calculate HRV (SDNN, pNN50, LF/HF, etc.), however, the one almost all trackers use is Root Mean Square of Successive Differences (RMSSD), including Whoop<sup>1</sup>.
-
-*RMSSD = sqrt( sum(diff^2) / count(diff) )*
-
-In plain English:
-1. Take each consecutive RR interval difference
-2. Square each difference
-3. Add all squared differences together
-4. Divide by the number of differences
-5. Take the square root
-
-##### Reading the data
-
-We're already capturing these: every K2 frame carries 0-2 of them in payload[10..] as u16 LE values in 1/1024-second units, and we already convert them to milliseconds in parseV5RealtimeData.
-
-1. K2 frame arrives
-2. parseV5RealtimeData extracts RR[]
-3. ingestRRIntervals(rr):
-    3.1 reject obvious artifacts (RR < 300ms or > 2000ms)
-    3.2 append to rolling window with timestamp
-    3.3 drop samples older than 60s (sliding window)
-    3.4 if ≥ 5 samples → compute RMSSD
-    3.5 publish to currentHRV + lastHRVUpdate
-
-Window = 60 seconds. That's the sweet spot between responsive (small window = noisy) and steady (large window = laggy). Outlier rejection on the interval itself (not the diff) — a single missed beat would otherwise produce a huge fake jitter.
-
-##### Handling edge cases
-
-RMSSD is can be too high. It can climbed from ~50 ms → 280+ ms. A healthy resting RMSSD lives in 20-100 ms. The cause is beat-detection artifacts — look at this run:
-
-seq=40 RR=[1061]   normal
-seq=41 RR=[1331]   ← missed beat: strap skipped one, RR doubled
-seq=42 RR=[ 534]   ← double-count: strap caught the missed one as a separate beat
-
-Those two consecutive intervals produce a successive difference of ~800 ms. Squared → 640,000. One ectopic beat blows up the whole window's RMSSD.
-
-The standard fix is to reject successive-difference values above a physiological threshold (~200 ms) before squaring. Almost every real HRV pipeline does this — Garmin, Polar, the academic literature. It costs nothing and instantly drops the value into the credible range. Our current code filters the RR intervals themselves (300-2000 ms), which lets ectopic doubles like 534 ms and 1331 ms through; what we need is to also filter the deltas.
+Now that we understand the right formatting for request response, we can start sending the following commands to start receiving data. We are going to start with heart rate. Instead of keeping live connection, which drains battery on both phone and Whoop, we are doing a historical sync. I'll explain in detail below how we do that.
+<table>
+  <thead>
+    <tr>
+      <th>Command Name</th>
+      <th>CMD</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>CLIENT_HELLO</code></td>
+      <td><code>0x91</code></td>
+      <td>Authenticate with WHOOP</td>
+    </tr>
+    <tr>
+      <td><code>TOGGLE_REALTIME_HR_OFF</code></td>
+      <td><code>0x03</code><br>(with <code>b3=0x00</code>)</td>
+      <td>Turn realtime HR stream off</td>
+    </tr>
+    <tr>
+      <td><code>EXIT_HIGH_FREQ_SYNC</code></td>
+      <td><code>0x61</code></td>
+      <td>Quiet extra/high-frequency stream state</td>
+    </tr>
+    <tr>
+      <td><code>GET_DATA_RANGE</code></td>
+      <td><code>0x22</code></td>
+      <td>Request available historical data range/status</td>
+    </tr>
+    <tr>
+      <td><code>SEND_HISTORICAL_DATA</code></td>
+      <td><code>0x16</code></td>
+      <td>Request buffered historical data</td>
+    </tr>
+    <tr>
+      <td><code>HISTORICAL_DATA_RESULT</code></td>
+      <td><code>0x17</code><br>(with cursor payload)</td>
+      <td>ACK <code>HistoryEnd</code> so WHOOP advances cursor</td>
+    </tr>
+  </tbody>
+</table>
 
 <hr class="separator">
 
-#### Sleep
-
-#### Resting Heart Rate
-
-Unweighted
-RHR = weighted_mean(HR samples in sleep window
-where; weight  = 1/HR
-
-Weighted
-RHR = weighted_mean(HR samples in sleep window)
-weight = high during detected SWS, low during awake/light
-
-
-### References
-1. (link: https://www.whoop.com/ca/en/thelocker/heart-rate-variability-hrv/ text: Heart Rate Variability Explained (Whoop))
-
-<hr class="separator">
-
-### Readings
-
-1. (link: https://en.wikipedia.org/wiki/Units_of_information text: Unit of Information)
-2. (link: https://judes.club/writing/cracking-the-whoop-5-bluetooth-protocol/#a-quick-bluetooth-primer text: Bluetooth Primer )
-3. (link: https://www.whoop.com/ca/en/thelocker/heart-rate-variability-hrv/ text: Heart Rate Variability Explained)
-4. (link: https://learn.sparkfun.com/tutorials/accelerometer-basics/all text: Accelerometer Basics)
+### Processing Data
 
 ----
 

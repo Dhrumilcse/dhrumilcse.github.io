@@ -1,0 +1,61 @@
+Title: When WhatsApp did less, better
+
+----
+
+Description: 
+
+----
+
+Date: 2026-08-28
+
+----
+
+Text:
+
+I was not old enough to remember WhatsApp’s launch, but thanks to the Internet Archive, here is what it looked like in 2011:
+
+<div class="th-image th-image-pair">
+(image: whatsapp-2011.png)
+(image: whatapp-2011-main.png)
+<p class="th-image-pair-caption">WhatsApp in 2011 ((link: https://web.archive.org/web/20110127175643/http://www.whatsapp.com/ text: source))</p>
+</div>
+
+Even though it started as a status-sharing app, they quickly released an instant messaging feature and stuck with that one core idea. If you look at their homepages over the years, "Messaging" was part of their hero text from (link: https://web.archive.org/web/20120404210832/http://www.whatsapp.com/ text: 2012) to (link: https://web.archive.org/web/20230601000937/https://www.whatsapp.com/ text: 2023). If you go to (link: https://whatsapp.com text: whatsapp.com) today, the hero text still says *Message* Privately. 
+
+Even as they grew, they kept solving harder versions of the same problem. As internet access became ubiquitous, especially in developing countries, WhatsApp made talking to family overseas essentially free and effortless. All you needed was a phone number. 
+
+They later added voice and video calls, but the promise stayed the same: let me connect with anyone I wanted, even if they were on the other side of the world.
+
+I've probably used WhatsApp every day for the last 7-8 years, and for the most part, I barely thought about the product itself. That is probably the highest compliment you can give a messaging app.
+
+<hr class="separator">
+
+### What changed
+
+When Meta acquired WhatsApp, it was obvious that monetization was going to become part of the equation. It was only a matter of time before that pressure started shaping the product itself.
+
+Look at the app today:
+
+<div class="th-image th-image-pair">
+(image: img_7753.png)
+(image: img_9193.png)
+<p class="th-image-pair-caption">WhatsApp in 2026</p>
+</div>
+
+To be fair, the core messaging experience still works. The problem is everything that has been built around it. Status became Updates. Channels arrived. Businesses became more prominent. Meta AI got its own place in the app. And now WhatsApp is introducing promoted channels, subscriptions, and ads in Status.
+
+Individually, none of these features ruin WhatsApp. But together, they change what the app is trying to be. Look at the image again: roughly 40% of the chat screen does absolutely nothing for me, while the rest tries to get me to use things I never opened WhatsApp for.
+
+I don't want to talk to Meta AI.
+
+I don't want Channels.
+
+I don't want to discover businesses.
+
+I don't need WhatsApp to become another place where I consume content. 
+
+All I want is to message (and now call) people, and I'd be more than happy to pay $5 / month to get that experience back.
+
+----
+
+Uuid: Pdj47qZvq1U9BTSU

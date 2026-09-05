@@ -1,0 +1,73 @@
+Title: Universal Ads Protocol
+
+----
+
+Description: 
+
+----
+
+Date: 2026-08-27
+
+----
+
+Text:
+
+The first-ever clickable advertisement was sold to a Silicon Valley law firm by GNN, which was displayed on HotWire.
+
+Fast forward to today, ads are the backbone of the modern software industry.
+
+<hr class="separator">
+
+### What it is
+Agentic Ads. 
+
+>Promote Acme Cloud Runner in Canada for one week. Spend at most CAD 500. Pay no more than CAD 1.25 per click. Show it only in running or fitness contexts.
+
+The protocol gives Instacart Ads a second front door for machines. The existing Ads Manager remains the human front door. Both ultimately call the same Instacart campaign services.
+
+<hr class="separator">
+
+### What it needs to support
+- media buying?
+- off-platform ads support?
+
+
+<hr class="separator">
+
+### Exploratory
+
+#### What do these do?
+1. (link: https://ads.instacart.com text: ads.instacart.com)
+2. (link: https://ads.reddit.com text: ads.reddit.com)
+3. (link: https://advertising.netflix.com/ text: advertising.netflix.com)
+4. (link: https://ads.openai.com text: ads.openai.com)
+5. (link: https://ads.facebook.com text: ads.facebook.com)
+
+#### What should v1 look like?
+Version one should support only:
+- One verified advertiser domain
+- One product or destination URL
+- One traffic objective
+- Native headline, body, image, and CTA
+- Contextual topics and country targeting
+- CPC pricing
+- Total and daily spend ceilings
+- Start and end times
+- Aggregate impressions, valid clicks, and spend
+- Mandatory “Sponsored” disclosure
+- Platform-native rendering and moderation
+
+Explicitly exclude initially:
+- User identifiers
+- Customer-list uploads
+- Retargeting
+- Conversion attribution
+- Real-time auctions
+- Video
+- Arbitrary HTML or JavaScript
+- Automated cross-platform budget optimization
+- Payment settlement
+
+----
+
+Uuid: WmzDOH1zqutUjsdG
