@@ -1,29 +1,32 @@
 title: Thoughts
 
 columns:
-  main:
-    width: 1/3
-    sections:
-      fields:
-        type: fields
-        fields:
-            description:
-              type: text
-              label: Description
-            text:
-              type: textarea
-  sidebar:
-    width: 2/3
+  - width: 1/2
+    fields:
+      description:
+        type: text
+        label: Description
+  - width: 1/2
+    fields:
+      text:
+        type: textarea
+  - width: 1/2
     sections:
       published:
         type: pages
         label: Published
         status: listed
         template: post
+        sortBy: date desc
+  - width: 1/2
+    sections:
       drafts:
         type: pages
         label: Drafts
         status: draft
         template: post
+        sortBy: date desc
+  - width: 1/1
+    sections:
       files:
         type: files
