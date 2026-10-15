@@ -6,6 +6,60 @@
     if (sections.length === 0) return; // Exit if not on photos page
     
     let currentSection = 0;
+    let audioCtx = null;
+    let shutterBuffer = null;
+
+    // Short mechanical shutter: two curtains, like a camera capture
+    function playCapture() {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+
+        if (!audioCtx) audioCtx = new AudioContext();
+
+        const start = () => {
+            const ctx = audioCtx;
+            const t = ctx.currentTime;
+
+            if (!shutterBuffer) {
+                const duration = 0.09;
+                const length = Math.floor(ctx.sampleRate * duration);
+                shutterBuffer = ctx.createBuffer(1, length, ctx.sampleRate);
+                const data = shutterBuffer.getChannelData(0);
+
+                for (let i = 0; i < length; i++) {
+                    const time = i / ctx.sampleRate;
+                    const open = Math.exp(-time * 220);
+                    const closeTime = time - 0.042;
+                    const close = closeTime > 0 ? Math.exp(-closeTime * 160) * 0.72 : 0;
+                    data[i] = (Math.random() * 2 - 1) * (open + close);
+                }
+            }
+
+            const source = ctx.createBufferSource();
+            source.buffer = shutterBuffer;
+
+            const filter = ctx.createBiquadFilter();
+            filter.type = 'bandpass';
+            filter.frequency.value = 2400;
+            filter.Q.value = 0.7;
+
+            const gain = ctx.createGain();
+            gain.gain.setValueAtTime(0.42, t);
+            gain.gain.exponentialRampToValueAtTime(0.001, t + 0.09);
+
+            source.connect(filter);
+            filter.connect(gain);
+            gain.connect(ctx.destination);
+            source.start(t);
+            source.stop(t + 0.1);
+        };
+
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume().then(start);
+        } else {
+            start();
+        }
+    }
     
     // Scroll to a specific section with fast animation
     function scrollToSection(index) {
@@ -54,14 +108,18 @@
     function nextSection() {
         if (currentSection < sections.length - 1) {
             scrollToSection(currentSection + 1);
+            return true;
         }
+        return false;
     }
     
     // Navigate to previous section
     function prevSection() {
         if (currentSection > 0) {
             scrollToSection(currentSection - 1);
+            return true;
         }
+        return false;
     }
     
     // Keyboard event handler
@@ -73,12 +131,18 @@
         
         switch(e.key) {
             case 'ArrowDown':
+                e.preventDefault();
+                if (nextSection()) playCapture();
+                break;
             case 'j':
             case ' ': // Space key
                 e.preventDefault();
                 nextSection();
                 break;
             case 'ArrowUp':
+                e.preventDefault();
+                if (prevSection()) playCapture();
+                break;
             case 'k':
                 e.preventDefault();
                 prevSection();
