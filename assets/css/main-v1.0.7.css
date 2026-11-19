@@ -228,8 +228,18 @@ a {
     border-bottom: 1px solid var(--line);
 }
 
+u {
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+}
+
 a:hover {
     border-bottom: 1px solid var(--text);
+}
+
+a u,
+.a-undecorated u {
+    border-bottom: none;
 }
 
 .a-undecorated {
