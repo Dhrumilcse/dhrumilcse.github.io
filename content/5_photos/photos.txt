@@ -13,9 +13,12 @@ Text:
 #### Swipe &#8595; <!-- mobile -->
 #### Press &#8595; <!-- desktop -->
 
-(image: dsc05760.jpg           caption: 014 | Monet's Water Lilies | August 2026             class:img-wrap)
-(image: dsc05726-1.jpg       caption: 014 | Stair-ing in the void | August 2026           class:img-wrap)
-(image: 3-2.jpg                      caption: 013 | A Snowy Evening | January 2026                 class:img-wrap)
+(image: fuji.jpeg                      caption: 017 | Fujisan | Oct 2026                                          class:img-wrap)
+(image: dsc06412.jpeg          caption: 016 | Aura farming | Oct 2026                                class:img-wrap)
+(image: fuhimi-inari.jpg       caption: 015 | A stroll through thousand gates | Oct 2026        class:img-wrap)
+(image: dsc05760.jpg           caption: 014 | Monet's Water Lilies | August 2026              class:img-wrap)
+(image: dsc05726-1.jpg       caption: 014 | Stair-ing in the void | August 2026               class:img-wrap)
+(image: 3-2.jpg                      caption: 013 | A Snowy Evening | January 2026                  class:img-wrap)
 (image: cape-spear.jpg        caption: 012 | Far east | July 2024                                         class:img-wrap)
 (image: hollow-coves.jpeg   caption: 011 | Hollow Coves | June 2024                              class:img-wrap)
 (image: stare-contest.jpeg  caption: 010 | Stare Contest | May 2024                               class:img-wrap)

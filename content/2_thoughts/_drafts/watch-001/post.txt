@@ -1,0 +1,34 @@
+Title: Watch 001
+
+----
+
+Description: 
+
+----
+
+Date: 2026-10-15
+
+----
+
+Text:
+
+Oct 15
+Turns out I have a bug to create something that exists in the physical world. Thoughts about this a lot and came to a conclusion that I like watches. They are simple and can be super complicated, so I decided to build one.
+
+Oct 17
+Started building (link: https://www.figma.com/board/NV6a2fKmosZnunYkSgTiec/Whiteboard?node-id=0-1&p=f&t=6e01h3wxXRQ41kto-0 text: a mood board)
+(image: screenshot-2026-10-23-at-11.49.49am.png class:th-image)
+
+Oct 19
+Sketch (Hamilton Khaki) and a model (DWC Terra)
+<div class="th-image th-image-pair">
+(image: hvcwuhsxyaabavr.jpeg)
+(image: hvcwuh5xoaejw1n.jpeg)
+</div>
+
+Oct 23
+Stumbled upon this watch company and love their (link: https://anordain.com/pages/workshop text: breakdown of components) (visual)
+
+----
+
+Uuid: eCEaFrOFt8eT0hnP

@@ -1,0 +1,215 @@
+Title: Kafka Concepts
+
+----
+
+Description: 
+
+----
+
+Date: 2026-11-12
+
+----
+
+Text:
+
+Kafka is designed as an event streaming system so application can react immediately as the event occurs.
+
+```
+Event source > Event Stream (Kafka) > Event destination
+```
+
+Where event stream contains records, and each record contains:
+```
+Record =>
+  timestamp
+  key
+  value
+  headers (optional)
+```
+
+Where `key` is used for 3 purposes:
+- enforcing ordering
+- locating data and keep it in sync
+- retention
+
+<br>
+
+&#x2726; Each record’s key and value is <u>serialized</u> into bytes by producers before sending them to Kafka. Consumers deserialize those bytes back into usable data. Avro and Protobuf are common schema-based formats.
+
+
+<br>
+
+&#x2726; A <u>Schema Registry</u> stores and versions schemas that define the structure of records. It runs as a separate service and checks compatibility as schemas change, helping producers and consumers evolve safely.
+
+<br>
+
+&#x2726; There are several <u>APIs</u> available in Kafka out of the box, including:
+- Producer (to produce records)
+- Consumer (to consume records)
+- Connect (to connect with ecosystem i.e. search engine)
+- Streams (to continuously process events, think process layer)
+
+<br>
+
+### Topics
+
+A topic is a logical group of same type of events, such as `orders` or `payments`. When you publish to Kafka, you need to specify which topic you want to publish your records to and the same goes for consumers. All records published to a topic are *immutable* and *append only*. Reading a record does not delete it, Kafka’s retention and cleanup settings determine how long it stays. Here is how to create a topic<sup>1</sup>:
+
+```
+kafka-topics.sh 
+  --bootstrap-server localhost:9092
+  --create --topic orders
+```
+
+<!-- numbers >> &#x278A;  &#x2777; star >> &#x2726;-->
+
+<br>
+
+&#x2726; Since Kafka is designed as a distributed system, we need a way to distribute data within each topic into different computing nodes (brokers) in a Kafka cluster. That is achieved using <u>partitions</u>. 
+
+Each partition is an ordered log where new records are appended to its end. Each partition can be accessed independently and in parallel by producers to publish and consumers to consume. 
+
+Each record within the partition has a unique id, called `offset`, a monotonically increasing number and once given out it is never reused. With that, ordering is guaranteed within each partition but the topic as a whole has no single ordering across all its partitions.
+
+The partition count can be specified when creating the topic:
+
+```
+kafka-topics.sh 
+  ...
+  --partitions 3 
+```
+
+If omitted, Kafka can use the configured defaults. You can increase a topic’s partition count later but Kafka does not support reducing it. Increasing it does not redistribute existing records.
+
+<br>
+
+&#x2726;  Each partition can have multiple <u>replicas</u>. Replication means keeping copies of a partition on different brokers.
+
+```
+kafka-topics.sh 
+  ...
+  --replication-factor 3 
+```
+
+The replication factor is the total number of assigned copies including the leader:
+
+- Factor `1`: one copy.
+- Factor `2`: one leader and one follower.
+- Factor `3`: one leader and two followers.
+
+Each partition has its own leader. Producers send writes to that leader, and followers replicate its log. If the leader fails, Kafka can elect an eligible replica to take over.
+
+<br>
+
+### Brokers
+
+A broker is a <u>Kafka server</u> that receives records from producers, stores them, and serves them to consumers. Multiple brokers work together as a <u>Kafka cluster</u>, allowing data and traffic to be distributed across different machines.
+
+```
+Kafka cluster =>
+  Broker 1
+  Broker 2
+  Broker 3
+```
+
+<br>
+
+&#x2726; Each broker stores a set of partition replicas (discussed above), potentially belonging to many different topics. A broker can be the leader for some partitions and a follower for others. For example, an orders topic with 3 partitions and a replication factor of 2 could be distributed like this:
+
+```
+Broker 1 => orders-0 (leader),  orders-2 (follower)
+Broker 2 => orders-1 (leader),  orders-0 (follower)
+Broker 3 => orders-2 (leader),  orders-1 (follower)
+```
+
+Here, each partition has copies on two different brokers. If one broker fails, an eligible replica on another broker can take over leadership for its affected partitions.
+
+<br>
+
+&#x2726; Inside a broker, <u>network threads</u> handle communication with clients and other brokers, while <u>I/O threads</u> process requests, including appending records to partition logs.
+
+```
+Request =>
+  Network thread
+  Request queue
+  I/O thread
+
+Response =>
+  Response queue
+  Network thread
+  Client
+```
+
+Separating these responsibilities allows the broker to handle many connections while processing reads and writes efficiently.
+
+For partitions where the broker is the leader, it accepts writes from producers and serves replication fetch requests from followers. For partitions where it is a follower, <u>background replica fetcher threads</u> fetch new records from the leader and append them to its local log. Replication is therefore pull based where followers request records from the leader.
+
+<br>
+
+&#x2726; To connect to a cluster, producers and consumers are given a list of broker addresses called bootstrap servers:
+
+```
+bootstrap.servers = broker1:9092, broker2:9092, broker3:9092
+```
+
+The client connects to an available broker to discover the cluster’s metadata, including which broker leads each partition. It then connects directly to the appropriate brokers to produce or consume records.
+
+<br>
+
+### Metrics
+Traffic for every request type, per topic and per partition metrics, time for every request type
+#### Activity Monitor
+CPU, Memory, Cluster gorups, lag
+
+<hr class='separator'>
+
+### Setting up a cluster
+Kafka provides (link: https://github.com/apache/kafka/blob/trunk/docker/examples/docker-compose-files/cluster/combined/plaintext/docker-compose.yml text: an example) on how to set that up using docker compose. Since this is maintained mainly by infra teams at most companies, we are not going to deep dive into it, at least not yet.
+
+<hr class='separator'>
+
+### Connect to a cluster
+In order for you to see anything at all, you'll have to connect to a cluster. There are many ways to do that, plain text connection.
+
+Client library: `rdkafka`, a Rust wrapper around `librdkafka`
+
+Supports Plain text, SASL Plain text
+
+SSL (TLS) and SASL SSL requires certificates resolved, need to work on this
+
+<hr class='separator'>
+
+### Publish
+How do you publish? Do continuous release?
+
+→ merge changes 
+→ bump version 
+→ push release tag
+→ automated build and publication
+→ installed apps discover the update
+→ background download 
+→ restart into the new version
+
+<hr class='separator'>
+
+### Marketing Webpage
+Copy Navigator style?
+
+<hr class='separator'>
+
+### Changelog
+Conductor style
+
+<hr class='separator'>
+
+### Questions
+Why is it so hard to search large flowing data? Is it partition? How do you ensure reliable and fast search?
+
+<hr class='separator'>
+
+### Footnotes
+<sup>1</sup> `kafka-topics.sh` is an official command-line tool bundled with Apache Kafka, inside its `bin/` directory.
+
+----
+
+Uuid: zF1R9zwCgjNbgC2P
